@@ -534,7 +534,7 @@ class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-left-30 -lef
 
 <button   class="text-web-purple cursor-pointer  hover:bg-slate-100 hover:rotate-2 active:rotate-2 active:bg-slate-100 bg-white rounded-[5px] h-13 px-6 transition duration-300 animated-button festival-btn">
   <span class="flex items-center gap-4 justify-center">
-    <img loading="lazy" class="object-contain w-4" src="/festivalicon.png" alt=""> 
+    <img loading="lazy" class="object-contain w-4" src="/festivalIcon.png" alt=""> 
     <span>Amman Festival</span>
   </span>
 </button>

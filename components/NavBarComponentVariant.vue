@@ -73,7 +73,7 @@
             
         <button class="text-white bg-web-purple cursor-pointer rounded-[5px] h-13   px-6 active:bg-web-purple-dark hover:bg-web-purple-dark transition duration-300">
             <span class="flex items-center gap-4 justify-center">
-                <img loading="lazy" class="object-contain w-4" src="/festivalicon.png" alt=""> Amman Festival
+                <img loading="lazy" class="object-contain w-4" src="/festivalIcon.png" alt=""> Amman Festival
             </span>
         </button>
         </div>
@@ -111,7 +111,7 @@
 
     <button class="text-white cursor-pointer bg-web-purple rounded-[5px] hidden md:block h-13 px-6 hover:bg-web-purple-dark active:bg-web-purple-dark transition duration-300">
         <span class="flex items-center gap-4 justify-center">
-        <img loading="lazy" class="object-contain w-4" src="/festivalicon.png" alt=""> <span class="hidden xl:block"> Amman Festival </span> 
+        <img loading="lazy" class="object-contain w-4" src="/festivalIcon.png" alt=""> <span class="hidden xl:block"> Amman Festival </span> 
         </span>
     </button>
     </div>
@@ -152,7 +152,7 @@
 
         <button class="text-white cursor-pointer bg-web-purple rounded-[5px]  h-13 px-6 hover:bg-web-purple-dark active:bg-web-purple-dark transition duration-300">
         <span class="flex items-center gap-4 justify-center">
-        <img loading="lazy" class="object-contain w-4" src="/festivalicon.png" alt=""> <span > Amman Festival </span> 
+        <img loading="lazy" class="object-contain w-4" src="/festivalIcon.png" alt=""> <span > Amman Festival </span> 
         </span>
     </button>
         </li>
