@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+    themes: light --default;
+  }
+
+@plugin 'tailwind-scrollbar';
+
+@theme {
+    --color-web-primary: #D7694E;
+    --color-web-primary-dark: #CA644D;
+    --color-web-purple: #4A3080;
+    --color-web-purple-dark: #432A77;
+    --color-web-turq: #009FAE;
+    --color-web-brown: #522812;
+}
+
+
+
+
+.bg-cream {
+    background-color: #FFFCF9;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+  }
+.inner-shadow{
+    box-shadow: inset 0px 0px 38px 20px rgba(0, 0, 0, 25%);
+}
