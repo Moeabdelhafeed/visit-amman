@@ -10,10 +10,7 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  app:{
-    baseURL: '/visit-amman/',
-    cdnURL: '/visit-amman/'
-  },
+
   
 
   css: ['~/assets/css/main.css'],
