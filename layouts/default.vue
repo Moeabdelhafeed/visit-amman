@@ -12,6 +12,7 @@
     <Body  class="bg-cream">
         
         <NavBarComponentVariant :ScrollNum="route.name == 'events' ?  0 :  route.name == 'about' || route.name == 'history' ? 100 :  150"  />
+        
         <NuxtPage />
         <FooterComponent />
     </Body>
@@ -26,4 +27,4 @@ const route = useRoute()
 
 <style scoped>
 
-</style>e
+</style>

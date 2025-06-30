@@ -98,21 +98,21 @@ slideChange: onSlideChange
 
 const content = ref({
 sponsors:{
-title: "Our sponsors",
+title: "Proudly Supported By",
 sponsors:[
-{url: 'https://placehold.co/600x400?text=Hello+World1', id: 0},
-{url: 'https://placehold.co/600x400?text=Hello+World2', id: 1},
-{url: 'https://placehold.co/600x400?text=Hello+World3', id: 2},
-{url: 'https://placehold.co/600x400?text=Hello+World4', id: 3},
-{url: 'https://placehold.co/600x400?text=Hello+World5', id: 4},
-{url: 'https://placehold.co/600x400?text=Hello+World6', id: 5},
-{url: 'https://placehold.co/600x400?text=Hello+World7', id: 6},
-{url: 'https://placehold.co/600x400?text=Hello+World8', id: 7},
+{url: 'acc.png', id: 0},
+{url: 'Amaneh.png', id: 1},
+{url: 'acc.png', id: 2},
+{url: 'Amaneh.png', id: 3},
+{url: 'acc.png', id: 4},
+{url: 'Amaneh.png', id: 5},
+{url: 'acc.png', id: 6},
+{url: 'Amaneh.png', id: 7},
 ],
 },
 mediahub:{
-title: "Media Hub",
-subtitle: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+title: "Amman's Media Mosaic",
+subtitle: "See, feel, and relive the city's vibrant pulse through images, videos, and live moments.",
 video:{
 title:'Videos of Amman',
 subtitle: 'Videos',
@@ -131,19 +131,19 @@ url: 'mediaMoment.png'
 
 },
 ammanFestival:{
-title: "Amman Festival",
-body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ipsum. Quaerat, ad necessitatibus sapiente incidunt similique amet consectetur voluptate molestiae ab. Eveniet veniam sed illo ratione necessitatibus dicta animi culpa. Dignissimos repellendus autem, voluptates magni, \n\n ipsam ex voluptatem adipisci, eaque provident deleniti similique eos dolores. Tempore amet explicabo voluptatibus quia exercitationem molestias, soluta perspiciatis asper",
+title: "Amman Festival: Where Culture Comes Alive",
+body: "Step into a world of color, music, and tradition. The Amman Festival is a celebration of our city's spirit—where ancient rhythms meet modern beats, and every moment is a memory in the making. Join us for unforgettable experiences, dazzling performances, and the true taste of Amman's hospitality.",
 },
 events:{
-title: "Events in Amman",
-subtitle: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+title: "Unmissable Events in Amman",
+subtitle: "From music under the stars to cultural feasts—discover what's happening now in the heart of Jordan.",
 events: [
 
 {
 title: "Desert Echoes: Sunset Music & Culture Festival",
 date: "18 Feb - 20 Feb",
 location: "Wadi Rum",
-url: "/event1.png",
+url: "/event3.jpg",
 description: "Join us for a magical weekend in the heart of Wadi Rum, where music meets the desert.",
 price: "50 JOD",
 category: "Music & Culture",
@@ -161,7 +161,7 @@ category: "Music & Culture",
 title: "Desert Echoes: Sunset Music & Culture Festival",
 date: "18 Feb - 20 Feb",
 location: "Wadi Rum",
-url: "/event1.png",
+url: "/event2.png",
 description: "Join us for a magical weekend in the heart of Wadi Rum, where music meets the desert.",
 price: "50 JOD",
 category: "Music & Culture",
@@ -170,40 +170,38 @@ category: "Music & Culture",
 ]
 },
 about:{
-title:"About Amman",      
+title:"Get to Know Amman",      
 image:"/Amman.png",
-subtitle:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-body:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ipsum. Quaerat, ad necessitatibus sapiente incidunt similique amet consectetur voluptate molestiae ab. Eveniet veniam sed illo ratione necessitatibus dicta animi culpa.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ipsum. Quaerat, ad necessitatibus sapiente incidunt similique amet consectetur voluptate molestiae ab. Eveniet veniam sed illo ratione necessitatibus dicta animi culpa.\nLorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ipsum. Quaerat, ad necessitatibus sapiente incidunt similique amet consectetur voluptate molestiae ab. Eveniet veniam sed illo ratione necessitatibus dicta animi culpa."
+subtitle:"A city of contrasts, where every corner tells a story.",
+body:"Amman is a city that bridges the past and the present. Wander through ancient ruins, savor world-class cuisine, and experience the warmth of a community that welcomes you like family. Whether you're here for history, adventure, or a taste of local life, Amman invites you to explore, connect, and create your own story.\n\nFrom bustling souks to tranquil hillsides, every moment in Amman is a new discovery. Come and see why our city is the beating heart of Jordan!",
 },
 destinations:{
-title:"Find things to do",
-subtitle:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+title:"Your Amman Adventure Awaits",
+subtitle:"Handpicked experiences for every explorer—dine, play, and discover the best of the city.",
 destinations:[
-{title:'View Restaurants', subtitle: 'Restaurants', url: '/Restaurants.png'},
+{title:'View Restaurants', subtitle: 'Restaurants', url: '/cafe.png'},
 {title:'Get Entertained', subtitle: 'Entertaiment', url: '/Entertaiments.png'},
 ]
 },
 locations:{
-title:"Explore popular areas",
-subtitle:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+  title: "Hidden Corners & Iconic Streets",
+  subtitle: "Journey through Amman's eclectic neighborhoods—where history, culture, and modern life intertwine.",
 locations:[
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
-{url: '/explore.png' , title: 'jabal alqalaa' , subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda'},
+{url: '/rainbow-street.png', title: 'Rainbow Street', subtitle: 'A vibrant street known for cafes, shops, and nightlife.'},
+{url: '/abdali-boulevard.png', title: 'Abdali Boulevard', subtitle: 'Modern shopping, dining, and entertainment destination.'},
+{url: '/jabal-amman.png', title: 'Jabal Amman', subtitle: 'Historic district with charming architecture and galleries.'},
+{url: '/downtown.png', title: 'Downtown', subtitle: 'The heart of old Amman, bustling markets and history.'},
+{url: '/khalda.png', title: 'Khalda', subtitle: 'Modern neighborhood with cafes, shops, and family attractions.'},
+{url: '/abdoun.png', title: 'Abdoun', subtitle: 'Upscale district known for its vibrant nightlife and restaurants.'},
+{url: '/swefieh.png', title: 'Swefieh', subtitle: 'Popular area for shopping and nightlife.'},
 ],
 },
 hero:{
 images: [
-{ url: '/hero1.png', id: 0, title:'Visit Adasdsmman', subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.' },
-{ url: '/hero2.png', id: 1 , title:'Visit Ammaasdasdn', subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.'},
-{ url: '/hero1.png', id: 2 , title:'Visit Amadasdman', subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.'},
-{ url: '/hero2.png', id: 3 , title:'Visit Ammasssssn', subtitle: 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.'},
+{ url: '/citadel1.png', id: 0, title:'Citadel Heights', subtitle: 'Where every stone tells a story' },
+{ url: '/hospitality.jpg', id: 1 , title:'A Taste of Jordanian Warmth', subtitle: 'Arrive as a guest, leave as family.'},
+{ url: '/citadel.png', id: 2 , title:'Amman After Dark', subtitle: 'The city glows with joy and possibility.'},
+{ url: '/dabkeh.jpg', id: 3 , title:'Living Heritage', subtitle: 'Traditions that dance with the present.'},
 ],
 }
 })
@@ -296,7 +294,7 @@ useHead({
 
         <button  v-motion-slide-visible-once-bottom class="mt-7 cursor-pointer hover:rotate-2 active:rotate-2 transform md:mt-0 text-web-primary bg-web-primary/15 rounded-sm h-12  px-6 active:bg-web-primary/20 hover:bg-web-primary/20 transition duration-300 animated-button">
     <span class="flex   items-center gap-4 justify-center">
-        Explore more
+        More Locations
         <span class="text-2xl">
             <IconsArrow45 />
             </span> 
@@ -460,7 +458,7 @@ v-for="(destination, index) in content.destinations.destinations"
           :key="`sponsor-${set}-${sponsor.id || Math.random()}`"
         >
           <img 
-            class="w-full h-full object-contain filter brightness-0 invert" 
+            class="w-full h-full object-contain " 
             :src="sponsor.url" 
           />
         </div>

@@ -30,9 +30,9 @@
     <!-- Dark overlay -->
     <div class="
 absolute inset-0
-bg-black/40                   <!-- Default for small screens (always dark like hover) -->
-xl:bg-black/30                <!-- Lighter on large screens (non-hover state on desktop) -->
-xl:group-hover:bg-black/40    <!-- On hover (desktop), darken -->
+bg-black/30                <!-- Default for small screens (always dark like hover) -->
+xl:bg-black/20    <!-- Lighter on large screens (non-hover state on desktop) -->
+xl:group-hover:bg-black/30   <!-- On hover (desktop), darken -->
 transform duration-300
 z-0
 "></div>
@@ -41,7 +41,8 @@ z-0
     <!-- Content container -->
     <div class="relative z-10 w-full">
     <p
-class="
+class=" 
+text-lg
 text-white mb-4 transition-all duration-300 transform
 translate-y-0                   <!-- Default (mobile) - always visible -->
 xl:translate-y-60               <!-- Hidden on large screens -->

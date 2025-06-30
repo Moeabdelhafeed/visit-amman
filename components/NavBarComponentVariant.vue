@@ -14,24 +14,18 @@
     <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
 
     <!-- Main content -->
-    <div :class="  scrollY < ScrollNum ? ' bg-transparent  text-white' : ' bg-white text-web-brown'" class="drawer-content   transition-all duration-300">
+    <div :class="  scrollY < ScrollNum ? '   text-white' : ' bg-white text-web-brown'" class="drawer-content py-1 transition-all duration-300">
     <div class="navbar mx-auto container px-2 py-3.5 flex items-center justify-between" >
 
         <div class="flex gap-5 ">
-        <NuxtLink :to="{name: 'home'}" class="w-40 hidden xl:block">
-        <img  loading="lazy" :src=" scrollY < ScrollNum ?  '/whitelogo.png' : '/colourfullogo.png' " alt="Logo" class="object-contain" />
-    </NuxtLink>
-    
-        
-
         <!-- Horizontal menu (hidden on small screens) -->
         <ul class="hidden xl:flex gap-10 items-center">
             <li><NuxtLink :to="{name: 'home'}" active-class="border-b-2 opacity-100" class="py-3"><button class="text-sm hover:opacity-100 cursor-pointer" :class="$route.name === 'home' ? 'opacity-100' : 'opacity-85'">Home</button></NuxtLink></li>
             
             <!-- About Dropdown -->
-            <li >
+            <li class="h-full flex" >
                 <button class="text-sm flex justify-between items-center gap-1.5 cursor-pointer opacity-85 hover:opacity-100 "   popovertarget="popover-3" style="anchor-name:--anchor-3">
-                About 
+                Explore Amman
                 <span class="text-lg">
 
 <IconsDownArrowDropDown />
@@ -39,17 +33,20 @@
             </button>
             <ul  class="dropdown text-web-brown  [&_li>*:not(ul):not(.menu-title):not(details):active]:bg-web-primary dropdown-start menu w-52 rounded-box bg-base-100 shadow-sm"
             popover id="popover-3" style="position-anchor:--anchor-3">
-            <li :class="$route.name == 'about'? 'bg-web-brown/10' : ''"  class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><NuxtLink :to="{name: 'about'}">Explore Amman</NuxtLink></li>
+            <li :class="$route.name == 'about'? 'bg-web-brown/10' : ''"  class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><NuxtLink :to="{name: 'about'}">About Amman</NuxtLink></li>
             <li :class="$route.name == 'history'? 'bg-web-brown/10' : ''" class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><NuxtLink :to="{name: 'history'}">History of Amman</NuxtLink></li>
             
             </ul>
 
             </li>
             
-            <li><NuxtLink :to="{name: 'events'}" active-class="border-b-2 opacity-100" class="py-3"><button class="text-sm hover:opacity-100 cursor-pointer" :class="$route.name === 'events' ? 'opacity-100' : 'opacity-85'">Events</button></NuxtLink></li>
+            <li><NuxtLink :to="{name: 'events'}" active-class="border-b-2 opacity-100" class="py-3"><button class="text-sm hover:opacity-100 cursor-pointer" :class="$route.name === 'events' ? 'opacity-100' : 'opacity-85'">Happening in Amman</button></NuxtLink></li>
             <li><NuxtLink :to="{name: 'destinations'}" active-class="border-b-2 opacity-100" class="py-3"><button class="text-sm hover:opacity-100 cursor-pointer" :class="$route.name === 'destinations' ? 'opacity-100' : 'opacity-85'">Where to go</button></NuxtLink></li>
             <li><NuxtLink :to="{name: 'mediahub'}" active-class="border-b-2 opacity-100" class="py-3"><button class="text-sm hover:opacity-100 cursor-pointer" :class="$route.name === 'mediahub' ? 'opacity-100' : 'opacity-85'">Media hub</button></NuxtLink></li>
         </ul>
+        <NuxtLink :to="{name: 'home'}" class="w-40 hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:block">
+        <img  loading="lazy" :src=" scrollY < ScrollNum ?  '/whitelogo.png' : '/colourfullogo.png' " alt="Logo" class="object-contain" />
+    </NuxtLink>
         </div>
         <!-- Logo -->
 
@@ -130,7 +127,7 @@
         <!-- About Dropdown -->
         <li >
             <button popovertarget="popover-4" style="anchor-name:--anchor-4" class="py-3  text-sm p-2 hover:bg-web-brown/10 active:bg-web-brown/10 rounded-sm opacity-85 w-full flex transition duration-300 cursor-pointer justify-between items-center">
-                About
+                Explore Amman
                 <span class="text-lg">
                     <IconsDownArrowDropDown />
                 </span>
@@ -138,14 +135,14 @@
             
             <ul  class="dropdown text-web-brown  [&_li>*:not(ul):not(.menu-title):not(details):active]:bg-web-primary dropdown-end menu w-52 rounded-box bg-base-100 shadow-sm"
             popover id="popover-4" style="position-anchor:--anchor-4">
-            <li :class="$route.name == 'about'? 'bg-web-brown/10' : ''"  class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><NuxtLink :to="{name: 'about'}">Explore Amman</NuxtLink></li>
+            <li :class="$route.name == 'about'? 'bg-web-brown/10' : ''"  class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><NuxtLink :to="{name: 'about'}">About Amman</NuxtLink></li>
             <li :class="$route.name == 'history'? 'bg-web-brown/10' : ''" class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><NuxtLink :to="{name: 'history'}">History of Amman</NuxtLink></li>
             
             </ul>
         </li>
        
         
-        <li><NuxtLink :to="{name: 'events'}" active-class="bg-web-brown/10 opacity-100" class="py-3 text-sm p-2 hover:bg-web-brown/10 rounded-sm opacity-85 active:bg-web-brown/10 w-full flex transition duration-300 cursor-pointer">Events</NuxtLink></li>
+        <li><NuxtLink :to="{name: 'events'}" active-class="bg-web-brown/10 opacity-100" class="py-3 text-sm p-2 hover:bg-web-brown/10 rounded-sm opacity-85 active:bg-web-brown/10 w-full flex transition duration-300 cursor-pointer">Happening in Amman</NuxtLink></li>
         <li><NuxtLink :to="{name: 'destinations'}" active-class="bg-web-brown/10 opacity-100" class="py-3 text-sm p-2 hover:bg-web-brown/10 rounded-sm opacity-85 active:bg-web-brown/10 w-full flex transition duration-300 cursor-pointer">Where to go</NuxtLink></li>
         <li><NuxtLink :to="{name: 'mediahub'}" active-class="bg-web-brown/10 opacity-100" class="py-3 text-sm p-2 hover:bg-web-brown/10 rounded-sm opacity-85 active:bg-web-brown/10 w-full flex transition duration-300 cursor-pointer">Media hub</NuxtLink></li>
         <li>

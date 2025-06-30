@@ -14,7 +14,7 @@
       
       <!-- Title -->
       <h1 class="text-white w-full text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-        Explore Amman
+        About Amman
       </h1>
       
       <!-- Subtitle -->
@@ -30,18 +30,23 @@
 <section class="container mx-auto px-4">
 
     <div class="breadcrumbs text-web-brown/70 text-sm pt-4">
-  <ul>
-    <li> 
-      <NuxtLink :to="{name:'home'}">
-      Home
-      </NuxtLink> 
-    </li>
-    <li> 
-      <NuxtLink :to="{name:'about'}">
-      Explore Amman
-      </NuxtLink> 
-    </li>
-  </ul>
+      <ul>
+            <li> 
+                <NuxtLink :to="{name:'home'}">
+                    Home
+                </NuxtLink> 
+            </li>
+            <li> 
+                <NuxtLink :to="{name:'about'}">
+                    Explore Amman
+                </NuxtLink> 
+            </li>
+            <li> 
+                <NuxtLink :to="{name:'about'}">
+                    About Amman
+                </NuxtLink> 
+            </li>
+        </ul>
 </div>
 </section>
 
@@ -84,61 +89,55 @@
     
     <!-- Cards Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-15">
-      <!-- Card 1 -->
+      <!-- Card 1: Heritage -->
       <div class="group active:scale-105 transform hover:scale-105 bg-transparent flex flex-col items-center text-center text-web-brown transition-all duration-300">
         <div class="text-web-primary mb-8">
-          <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
+          <!-- Heritage Icon: Column/Monument -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50"  viewBox="0 0 16 16"><!-- Icon from Fluent UI System Icons by Microsoft Corporation - https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE --><path fill="currentColor" d="M7.292 1.712c.418-.32.999-.32 1.417 0l4.962 3.793c.632.483.293 1.491-.501 1.495H2.83c-.793-.004-1.133-1.012-.5-1.495zM8 5.25a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5M3.5 8v3H5V8zM6 8v3h1.5V8zm2.5 0v3H10V8zM11 8v3h1.5V8zm-9 5.25c0-.69.56-1.25 1.25-1.25h9.5c.69 0 1.25.56 1.25 1.25v.25a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5z"/></svg>
         </div>
         <h3 class="text-2xl font-bold mb-4">
-          Rich History
+          Heritage
         </h3>
         <p class="leading-relaxed text-web-brown/70 text-lg">
-          Explore ancient ruins, historic sites, and archaeological wonders that tell the story of civilizations past.
+          Discover Amman's ancient ruins, archaeological wonders, and rich historical legacy that shaped civilizations.
         </p>
       </div>
+      <!-- Card 2: Culture -->
       <div class="group active:scale-105 transform hover:scale-105 bg-transparent flex flex-col items-center text-center text-web-brown transition-all duration-300">
         <div class="text-web-primary mb-8">
-          <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="50"  viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M8.828 3a3 3 0 0 0-2.12.879l-3.001 3a3 3 0 0 0 0 4.242l1.465 1.465a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 0-1.414L8.478 5.064A1 1 0 0 1 8.828 5h6.344a1 1 0 0 1 .35.064l-7.23 7.229a3.82 3.82 0 0 0-1.12 2.73a3.8 3.8 0 0 0 1.121 2.685a3.82 3.82 0 0 0 3.101 1.1l1.399 1.4a1 1 0 0 0 1.414-1.415l-.809-.809q.16-.129.31-.277l.292-.293l1.293 1.293a1 1 0 0 0 1.414-1.414L15.414 16l.586-.586l1.793 1.793a1 1 0 0 0 1.414-1.414L17.414 14l2.879-2.879a3 3 0 0 0 0-4.242l-3-3A3 3 0 0 0 15.172 3z"/></g></svg>
         </div>
         <h3 class="text-2xl font-bold mb-4">
-          Rich History
+          Culture
         </h3>
         <p class="leading-relaxed text-web-brown/70 text-lg">
-          Explore ancient ruins, historic sites, and archaeological wonders that tell the story of civilizations past.
+          Experience vibrant art, music, cuisine, and traditions in a city where old and new cultures blend seamlessly.
         </p>
       </div>
-
-      <!-- Card 2 -->
+      <!-- Card 3: Entertainment -->
       <div class="group active:scale-105 transform hover:scale-105 bg-transparent flex flex-col items-center text-center text-web-brown transition-all duration-300">
         <div class="text-web-primary mb-8">
-          <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
+          <!-- Entertainment Icon: Ticket/Clapperboard -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M10 21q-1.65 0-2.825-1.175T6 17t1.175-2.825T10 13q.575 0 1.063.138t.937.412V3h6v4h-4v10q0 1.65-1.175 2.825T10 21"/></svg>
         </div>
         <h3 class="text-2xl font-bold mb-4">
-          Vibrant Culture
+          Entertainment
         </h3>
         <p class="leading-relaxed text-web-brown/70 text-lg">
-          Experience contemporary art, music, cuisine, and traditions in a modern urban setting with authentic local charm.
+          Enjoy lively festivals, events, theaters, and nightlife that make Amman a city full of excitement.
         </p>
       </div>
-
-      <!-- Card 3 -->
+      <!-- Card 4: Hospitality -->
       <div class="group active:scale-105 transform hover:scale-105 bg-transparent flex flex-col items-center text-center text-web-brown transition-all duration-300">
         <div class="text-web-primary mb-8">
-          <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-          </svg>
+          <!-- Hospitality Icon: Hand/Heart -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50"  viewBox="0 0 14 14"><!-- Icon from Streamline by Streamline - https://creativecommons.org/licenses/by/4.0/ --><path fill="currentColor" fill-rule="evenodd" d="M7 .103a.75.75 0 0 1 .75.75v1.04A7 7 0 0 1 14 8.854a1.5 1.5 0 0 1-1.5 1.5h-11a1.5 1.5 0 0 1-1.5-1.5a7 7 0 0 1 6.25-6.96V.854A.75.75 0 0 1 7 .103M.78 11.75a.75.75 0 0 0 0 1.5h12.44a.75.75 0 0 0 0-1.5z" clip-rule="evenodd"/></svg>
         </div>
         <h3 class="text-2xl font-bold mb-4">
-          Local Experiences
+          Hospitality
         </h3>
         <p class="leading-relaxed text-web-brown/70 text-lg">
-          Immerse yourself in authentic local culture through food, markets, and genuine hospitality of the Jordanian people.
+          Experience the warmth and generosity of Jordanian hospitality, where every visitor is treated like family.
         </p>
       </div>
     </div>
@@ -259,6 +258,10 @@
 
 <script setup>
 import gsap from 'gsap'
+
+useHead({
+  title:'About - Visit Amman'
+})
 
 // Add reactive state to trigger transition
 const isMounted = ref(false)
