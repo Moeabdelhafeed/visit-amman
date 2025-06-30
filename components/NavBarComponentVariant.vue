@@ -4,18 +4,23 @@
       <!-- scroll to top button -->
       <a href="#">
         
-  <button v-if="scrollY > ScrollNum"   class="fixed cursor-pointer text-xl transform translation  bottom-5 right-5 z-50 bg-web-primary text-white rounded-full p-3 shadow-lg hover:bg-web-primary-dark transition duration-300">
+  <button v-if="scrollY > ScrollNum"   class="fixed  cursor-pointer text-xl transform translation  bottom-5 right-5 z-50 bg-web-primary text-white rounded-full p-3 shadow-lg hover:bg-web-primary-dark transition duration-300">
 
     <IconsUpArrow />
   </button>
     </a>
+    <div class="bg-white w-full h-18 border-b border-web-brown/20  relative">
+        <NuxtLink :to="{name: 'home'}" class="w-40 hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:block">
+        <img  loading="lazy" :src=" '/colourfullogo.png' " alt="Logo" class="object-contain" />
+    </NuxtLink>
+    </div>
 
     <!-- Drawer toggle -->
     <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
 
     <!-- Main content -->
-    <div :class="  scrollY < ScrollNum ? '   text-white' : ' bg-white text-web-brown'" class="drawer-content py-1 transition-all duration-300">
-    <div class="navbar mx-auto container px-2 py-3.5 flex items-center justify-between" >
+    <div :class="  scrollY < ScrollNum ? ' bg-white/5 backdrop-blur-sm   text-white' : ' bg-white text-web-brown'" class="drawer-content  transition-all duration-300">
+    <div class="navbar mx-auto container px-2 py-2 flex items-center justify-between" >
 
         <div class="flex gap-5 ">
         <!-- Horizontal menu (hidden on small screens) -->
@@ -44,9 +49,7 @@
             <li><NuxtLink :to="{name: 'destinations'}" active-class="border-b-2 opacity-100" class="py-3"><button class="text-sm hover:opacity-100 cursor-pointer" :class="$route.name === 'destinations' ? 'opacity-100' : 'opacity-85'">Where to go</button></NuxtLink></li>
             <li><NuxtLink :to="{name: 'mediahub'}" active-class="border-b-2 opacity-100" class="py-3"><button class="text-sm hover:opacity-100 cursor-pointer" :class="$route.name === 'mediahub' ? 'opacity-100' : 'opacity-85'">Media hub</button></NuxtLink></li>
         </ul>
-        <NuxtLink :to="{name: 'home'}" class="w-40 hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:block">
-        <img  loading="lazy" :src=" scrollY < ScrollNum ?  '/whitelogo.png' : '/colourfullogo.png' " alt="Logo" class="object-contain" />
-    </NuxtLink>
+       
         </div>
         <!-- Logo -->
 
