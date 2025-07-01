@@ -13,7 +13,7 @@
         max-w-100
     mx-auto               
     p-4                 
-    h-140
+    h-[58svh]
     overflow-hidden
     inner-shadow
     bg-cover
@@ -79,7 +79,7 @@ text-black bg-white rounded-sm h-13 w-full px-6
 active:bg-slate-100 hover:bg-slate-200
 "
 >
-Explore Location
+Explore {{ location.title }}
 </button>
 
     </div>

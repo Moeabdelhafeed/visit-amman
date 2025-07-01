@@ -1,5 +1,5 @@
 <template>
-<div class="drawerflex flex-col z-50 fixed top-0 left-0 w-full">
+<div class="drawerflex flex-col z-50 fixed top-0 start-0 w-full">
 
       <!-- scroll to top button -->
       <a href="#">
@@ -91,7 +91,7 @@
     <!-- Center: Logo (absolute center) -->
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  ">
     <NuxtLink :to="{name: 'home'}" >
-        <img loading="lazy" :src=" scrollY < 150 ?  '/whitelogo.png' : '/colourfullogo.png' " alt="Logo" class="object-contain h-12" />
+        <img loading="lazy" :src=" scrollY < ScrollNum ?  '/whitelogo.png' : '/colourfullogo.png' " alt="Logo" class="object-contain h-12" />
     </NuxtLink>
     </div>
 

@@ -2,7 +2,6 @@
 import { IconsUpArrow, IconsDownArrow, IconsArrow45 } from '#components'
 import 'vue3-carousel/carousel.css'
 import DestinationCard from '~/components/Home/DestinationCard.vue'
-import gsap from 'gsap'
 
 definePageMeta({
   name: 'home'
@@ -45,8 +44,8 @@ const showText = ref(true)
 
 // Vue transition hooks with GSAP
 const onEnter = (el) => {
-  gsap.set(el, { opacity: 0, y: 30 })
-  gsap.to(el, {
+  useGSAP().set(el, { opacity: 0, y: 30 })
+  useGSAP().to(el, {
     opacity: 1,
     y: 0,
     duration: 0.8,
@@ -55,7 +54,7 @@ const onEnter = (el) => {
 }
 
 const onLeave = (el, done) => {
-  gsap.to(el, {
+  useGSAP().to(el, {
     opacity: 0,
     y: -30,
     duration: 0.3,
@@ -147,6 +146,7 @@ url: "/event3.jpg",
 description: "Join us for a magical weekend in the heart of Wadi Rum, where music meets the desert.",
 price: "50 JOD",
 category: "Music & Culture",
+countdownDate: "2025-06-31T21:27:00+03:00"
 },
 {
 title: "Desert Echoes: Sunset Music & Culture Festival",
@@ -156,6 +156,7 @@ url: "/event1.png",
 description: "Join us for a magical weekend in the heart of Wadi Rum, where music meets the desert.",
 price: "50 JOD",
 category: "Music & Culture",
+countdownDate: "2025-06-31T21:27:00+03:00"
 },
 {
 title: "Desert Echoes: Sunset Music & Culture Festival",
@@ -165,6 +166,7 @@ url: "/event2.png",
 description: "Join us for a magical weekend in the heart of Wadi Rum, where music meets the desert.",
 price: "50 JOD",
 category: "Music & Culture",
+countdownDate: "2025-06-31T21:27:00+03:00"
 },
 
 ]
@@ -175,13 +177,17 @@ image:"/Amman.png",
 subtitle:"A city of contrasts, where every corner tells a story.",
 body:"Amman is a city that bridges the past and the present. Wander through ancient ruins, savor world-class cuisine, and experience the warmth of a community that welcomes you like family. Whether you're here for history, adventure, or a taste of local life, Amman invites you to explore, connect, and create your own story.\n\nFrom bustling souks to tranquil hillsides, every moment in Amman is a new discovery. Come and see why our city is the beating heart of Jordan!",
 },
-destinations:{
-title:"Your Amman Adventure Awaits",
-subtitle:"Handpicked experiences for every explorer—dine, play, and discover the best of the city.",
-destinations:[
-{title:'View Restaurants', subtitle: 'Restaurants', url: '/cafe.png'},
-{title:'Get Entertained', subtitle: 'Entertaiment', url: '/Entertaiments.png'},
-]
+destinations: {
+  title: "Your Amman Adventure Awaits",
+  subtitle: "Handpicked experiences for every explorer—dine, play, and discover the best of the city.",
+  destinations: [
+    { title: 'Restaurants', subtitle: 'Best places to eat in Amman', url: '/cafe.png' },
+    { title: 'Cafes', subtitle: 'Cozy spots for coffee and tea', url: '/rainbow-street.png' },
+    { title: 'Entertainments', subtitle: 'Fun activities and nightlife', url: '/Entertaiments.png' },
+    { title: 'Parks', subtitle: 'Relax in Amman\'s green spaces', url: '/abdoun.png' },
+    { title: 'Museums', subtitle: 'Discover history and culture', url: '/citadel.png' },
+    { title: 'Shopping', subtitle: 'Explore malls and local markets', url: '/abdali-boulevard.png' }
+  ]
 },
 locations:{
   title: "Hidden Corners & Iconic Streets",
@@ -203,13 +209,35 @@ images: [
 { url: '/citadel.png', id: 2 , title:'Amman After Dark', subtitle: 'The city glows with joy and possibility.'},
 { url: '/dabkeh.jpg', id: 3 , title:'Living Heritage', subtitle: 'Traditions that dance with the present.'},
 ],
-}
+},
+statistics: {
+  title: 'Amman in Numbers',
+  stats: [
+    { number: '4M+', label: 'Population' },
+    { number: '7,000+', label: 'Years of History' },
+    { number: '100+', label: 'Nationalities' },
+    { number: '50+', label: 'Museums & Galleries' },
+    { number: '300+', label: 'Restaurants & Cafes' },
+    { number: '20+', label: 'Annual Festivals' }
+  ]
+},
 })
 
+
+const scrollLocations = (direction) => {
+  if (!locationsScroll.value) return;
+  const scrollAmount = 300;
+  locationsScroll.value.scrollBy({
+    left: direction === 'left' ? -scrollAmount : scrollAmount,
+    behavior: 'smooth'
+  });
+}
 
 useHead({
   title:'Home - Visit Amman'
 })
+
+const locationsScroll = ref(null)
 
 </script>
 
@@ -269,7 +297,7 @@ useHead({
 
 <div  class="absolute  mt-20 inset-0  flex flex-col justify-center items-center text-center text-white px-4 pointer-events-none">
 
-<button @click="scrollTo(locationsRef)" class=" cursor-pointer absolute bottom-5 gap-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-50 pointer-events-auto">
+<button @click="scrollTo(locationsRef)" class=" whitespace-nowrap cursor-pointer absolute bottom-5 gap-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-50 pointer-events-auto">
   Explore now
   <span class="text-xl animate-bounce">
     <IconsDownArrow />
@@ -292,53 +320,115 @@ useHead({
     </p>
         </div>
 
-        <button  v-motion-slide-visible-once-bottom class="mt-7 cursor-pointer hover:rotate-2 active:rotate-2 transform md:mt-0 text-web-primary bg-web-primary/15 rounded-sm h-12  px-6 active:bg-web-primary/20 hover:bg-web-primary/20 transition duration-300 animated-button">
-    <span class="flex   items-center gap-4 justify-center">
+        <!-- <button  v-motion-slide-visible-once-bottom class="mt-7 cursor-pointer hover:rotate-2 active:rotate-2 transform md:mt-0 text-web-primary bg-web-primary/15 rounded-sm h-12  px-6 active:bg-web-primary/20 hover:bg-web-primary/20 transition duration-300 animated-button">
+    <span class="flex whitespace-nowrap   items-center gap-4 justify-center">
         More Locations
         <span class="text-2xl">
             <IconsArrow45 />
             </span> 
     </span>
-</button>
+</button> -->
 
     </div>
 
 
-    <div
-class="scrollbar-thin 
-  scrollbar-thumb-web-brown 
-  scrollbar-track-web-brown/20 
-  scrollbar-thumb-rounded-full 
-  scrollbar-track-rounded-full 
-  overflow-x-auto
-  mx-auto flex flex-row py-10
-  snap-x snap-mandatory
-  "
-  
->
-<div>
+
+
+    <div class="relative  w-full">
+      <!-- Left Arrow -->
+      <button
+        @click="scrollLocations('left')"
+        class=" items-center hover:scale-110 hidden xl:flex text-white bg-web-primary hover:bg-web-primary-dark active:bg-web-primary-dark justify-center absolute start-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12    rounded-full shadow transition"
+        aria-label="Scroll left"
+      >
+      <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+  </svg>
+      </button>
+      <!-- Right Arrow -->
+      <button
+        @click="scrollLocations('right')"
+        class=" items-center  text-white hidden xl:flex hover:scale-110 bg-web-primary hover:bg-web-primary-dark active:bg-web-primary-dark justify-center absolute right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12  rounded-full shadow transition"
+        aria-label="Scroll right"
+      >
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+  </svg>
+      </button>
+      <!-- Scrollable Area -->
+      <div
+        class="scrollbar-thin scrollbar-thumb-web-brown scrollbar-track-web-brown/20 scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-x-auto mx-auto flex flex-row py-10 snap-x snap-mandatory w-full"
+        ref="locationsScroll"
+      >
+        <div class="flex"   >
+          <div
+            v-for="(location, index) in content?.locations?.locations"
+            :key="index"
+            class="snap-start w-max px-4 "
+            ref="locationCards"
+          >
+            <HomeLocationCard v-motion-slide-visible-once-right :location="location" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
 
 </div>
-<div class="flex"   >
 
-<div
-v-for="(location, index) in content?.locations?.locations"
+
+
+
+</section>
+
+
+
+
+<section v-if="content?.events" class=" text-web-brown relative z-30  pt-10 xl:pt-25 ">
+<div >
+    <div class="md:flex container overflow-visible px-4 mx-auto justify-between">
+
+        <div class="section-header">
+
+    <p v-motion-slide-visible-once-bottom class="font-bold text-3xl mb-2">
+        {{ content?.events?.title }}
+    </p>
+    <p v-motion-slide-visible-once-bottom class="text-lg text-web-brown/70">
+        {{ content?.events?.subtitle }}
+    </p>
+        </div>
+
+        <button v-motion-slide-visible-once-bottom  class="mt-7 cursor-pointer md:mt-0 active:rotate-2 hover:rotate-2 text-web-primary bg-web-primary/15 rounded-sm h-12  px-6 active:bg-web-primary/20 hover:bg-web-primary/20 transition duration-300 animated-button">
+    <NuxtLink :to="{name: 'events'}" class="flex whitespace-nowrap items-center gap-4 justify-center">
+        Explore events
+        <span class="text-2xl">
+            <IconsArrow45 />
+            </span> 
+    </NuxtLink>
+</button>
+
+    </div>
+    <div class="container flex justify-center mx-auto px-4">
+
+<div class="mt-10 grid grid-cols-1 w-max  lg:grid-cols-2 xl:grid-cols-3 gap-8">
+<div 
+v-for="(event, index) in content.events.events"
 :key="index"
-class="snap-start w-max px-4 "
-ref="locationCards"
+class="event-card"
 >
-
-<HomeLocationCard v-motion-slide-visible-once-right :location="location" />
+<HomeEventCard  v-motion-slide-visible-once-bottom :event="event" />
 </div>
 </div>
-
-</div>
+    </div>
 
 </div>
 </section>
 
 
-<section v-if="content?.destinations" class=" text-web-brown relative z-30 pt-13 xl:pt-25 ">
+
+<section v-if="content?.destinations" class=" text-web-brown relative z-30 pt-20 xl:pt-30 ">
 <div >
     <div class="md:flex container overflow-visible px-4 mx-auto justify-between">
 
@@ -353,20 +443,20 @@ ref="locationCards"
         </div>
 
         <button v-motion-slide-visible-once-bottom class="mt-7 cursor-pointer active:rotate-2 md:mt-0 hover:rotate-2 text-web-primary bg-web-primary/15 rounded-sm h-12  px-6 active:bg-web-primary/20 hover:bg-web-primary/20 transition duration-300 animated-button">
-    <span class="flex  items-center gap-4 justify-center">
-        Explore more
+    <NuxtLink :to="{name: 'destinations'}" class="flex whitespace-nowrap  items-center gap-4 justify-center">
+        Explore destinations
         <span class="text-2xl">
             <IconsArrow45 />
             </span> 
-    </span>
+    </NuxtLink>
 </button>
 
     </div>
   <div class="container mx-auto px-4">
-<div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="mt-10 grid lg:grid-cols-2    gap-8">
 <div
 
-class="w-full lg:h-[450px] h-[350px] destination-card"
+class="w-full  h-[250px] destination-card"
 v-for="(destination, index) in content.destinations.destinations"
 :key="index"
 >
@@ -380,6 +470,62 @@ v-for="(destination, index) in content.destinations.destinations"
 
 </div>
 </section>    
+
+<!-- Statistics Section -->
+<section  v-motion-slide-visible-once-bottom  v-if="content?.statistics" class="relative text-web-brown z-30 pt-20 xl:pt-25 ">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10 section-header">
+      <h2 class="font-bold text-3xl mb-4">{{ content?.statistics?.title }}</h2>
+      <div class="w-24 h-1 bg-web-primary mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-6 gap-8">
+      <HomeStaticCard v-motion-slide-visible-once-bottom  :stat="stat" v-for="stat in content?.statistics?.stats" :key="stat" />
+    </div>
+  </div>
+</section>
+
+<section v-if="content?.ammanFestival" class="relative overflow-hidden z-30 text-white bg-web-purple mt-20 xl:mt-30 festival-section">
+
+<!-- Watermark Background Image -->
+<img 
+
+loading="lazy"
+src="/bagWatermark.png" 
+class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-start-30 -start-60 pointer-events-none select-none"
+/>
+
+<div class="container relative z-10 px-4 mx-auto  xl:mt-0">
+
+<div class="xl:grid flex flex-col xl:grid-cols-2 py-10 ">
+
+<!-- Text Side -->
+<div v-motion-slide-visible-once-bottom   class="flex flex-col xl:order-1 order-2  justify-center items-start gap-4 festival-content">
+<h2  class="text-3xl   font-bold mb-4">{{ content?.ammanFestival?.title }}</h2>
+<p  class="text-lg text-white/70 mb-6 text-start leading-relaxed" v-html="content?.ammanFestival?.body.replace(/\n/g,'<br>')"></p>
+<div   class="flex flex-col xl:flex-row gap-4   justify-start">
+
+<button   class="text-web-purple cursor-pointer  hover:bg-slate-100 hover:rotate-2 active:rotate-2 active:bg-slate-100 bg-white rounded-[5px] h-13 px-6 transition duration-300 animated-button festival-btn">
+  <span class="flex items-center gap-4 justify-center">
+    <img loading="lazy" class="object-contain w-4" src="/festivalIcon.png" alt=""> 
+    <span>Amman Festival</span>
+  </span>
+</button>
+</div>
+</div>
+
+<!-- Image Side -->
+<div v-motion-slide-visible-once-bottom   class="flex order-1  xl:justify-end justify-center xl:py-20 pb-10  items-center">
+<div class="flex flex-col justify-between xl:w-[400px] w-[250px] h-[350px] xl:h-[570px] relative">
+  <img loading="lazy" class="w-full h-auto object-cover" src="/PortalStart.png">
+  <img v-gsap.magnetic.strong v-motion-slide-visible-once-bottom loading="lazy" class="w-full bottom-20 -end-10 absolute h-auto object-cover festival-character" src="/char.png">
+  <img loading="lazy" class="w-full h-auto object-cover" src="/PortalEnd.png">
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
 
 
 <section v-if="content?.about" class="relative text-web-brown pt-20 xl:pt-30 z-20">
@@ -417,7 +563,7 @@ v-for="(destination, index) in content.destinations.destinations"
           <NuxtLink :to="{name: 'about'}">
 
           <button v-motion-slide-visible-once-bottom   class="w-max cursor-pointer  xl:mt-8 active:rotate-2 hover:rotate-2 text-white bg-web-primary rounded-sm h-12 px-6 active:bg-web-primary-dark hover:bg-web-primary-dark transition duration-300 animated-button">
-            <span class="flex items-center gap-4 justify-center">
+            <span class="flex whitespace-nowrap items-center gap-4 justify-center">
               Explore more
               <span class="text-2xl">
                 <IconsArrow45 />
@@ -435,11 +581,14 @@ v-for="(destination, index) in content.destinations.destinations"
 
 
 
-<section v-if="content?.sponsors?.sponsors" class="relative bg-gradient-to-r from-web-primary via-web-primary/95 to-web-primary text-white mt-20 xl:mt-30 py-10 lg:py-15 z-20 overflow-hidden">
+
+<section v-if="content?.sponsors?.sponsors" class="relative mt-20 xl:mt-30 bg-gradient-to-r from-web-primary via-web-primary/95 to-web-primary text-white    z-20 overflow-hidden">
   <!-- Background pattern for visual interest -->
-  <div class="absolute inset-0 bg-black/5"></div>
+  <img src="/watermarkfull.png" class="absolute h-[400px]  opacity-10" alt="">
   
     <!-- Enhanced header -->
+    <div class="py-10 lg:py-15">
+
     <div v-motion-slide-visible-once-bottom class="text-center mb-5 section-header">
       <h3 class="text-3xl font-bold mb-5 tracking-tight">
         {{content?.sponsors?.title}}
@@ -464,93 +613,8 @@ v-for="(destination, index) in content.destinations.destinations"
         </div>
       </div>
     </div>
+    </div>
   </div>
-</section>
-
-
-
-<section v-if="content?.events" class=" text-web-brown relative z-30 pt-20 xl:pt-30 ">
-<div >
-    <div class="md:flex container overflow-visible px-4 mx-auto justify-between">
-
-        <div class="section-header">
-
-    <p v-motion-slide-visible-once-bottom class="font-bold text-3xl mb-2">
-        {{ content?.events?.title }}
-    </p>
-    <p v-motion-slide-visible-once-bottom class="text-lg text-web-brown/70">
-        {{ content?.events?.subtitle }}
-    </p>
-        </div>
-
-        <button v-motion-slide-visible-once-bottom  class="mt-7 cursor-pointer md:mt-0 active:rotate-2 hover:rotate-2 text-web-primary bg-web-primary/15 rounded-sm h-12  px-6 active:bg-web-primary/20 hover:bg-web-primary/20 transition duration-300 animated-button">
-    <span class="flex  items-center gap-4 justify-center">
-        Explore more
-        <span class="text-2xl">
-            <IconsArrow45 />
-            </span> 
-    </span>
-</button>
-
-    </div>
-    <div class="container flex justify-center mx-auto px-4">
-
-<div class="mt-10 grid grid-cols-1 w-max  lg:grid-cols-2 xl:grid-cols-3 gap-8">
-<div 
-v-for="(event, index) in content.events.events"
-:key="index"
-class="event-card"
->
-<HomeEventCard  v-motion-slide-visible-once-bottom :event="event" />
-</div>
-</div>
-    </div>
-
-</div>
-</section>
-
-
-<section v-if="content?.ammanFestival" class="relative overflow-hidden z-30 text-white bg-web-purple mt-20 xl:mt-30 festival-section">
-
-<!-- Watermark Background Image -->
-<img 
-
-loading="lazy"
-src="/bagWatermark.png" 
-class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-left-30 -left-60 pointer-events-none select-none"
-/>
-
-<div class="container relative z-10 px-4 mx-auto  xl:mt-0">
-
-<div class="xl:grid flex flex-col xl:grid-cols-2 py-10 ">
-
-<!-- Text Side -->
-<div v-motion-slide-visible-once-bottom   class="flex flex-col xl:order-1 order-2  justify-center items-start gap-4 festival-content">
-<h2  class="text-3xl   font-bold mb-4">{{ content?.ammanFestival?.title }}</h2>
-<p  class="text-lg text-white/70 mb-6 text-start leading-relaxed" v-html="content?.ammanFestival?.body.replace(/\n/g,'<br>')"></p>
-<div   class="flex flex-col xl:flex-row gap-4   justify-start">
-
-<button   class="text-web-purple cursor-pointer  hover:bg-slate-100 hover:rotate-2 active:rotate-2 active:bg-slate-100 bg-white rounded-[5px] h-13 px-6 transition duration-300 animated-button festival-btn">
-  <span class="flex items-center gap-4 justify-center">
-    <img loading="lazy" class="object-contain w-4" src="/festivalIcon.png" alt=""> 
-    <span>Amman Festival</span>
-  </span>
-</button>
-</div>
-</div>
-
-<!-- Image Side -->
-<div v-motion-slide-visible-once-bottom   class="flex order-1  xl:justify-end justify-center xl:py-20 pb-10  items-center">
-<div class="flex flex-col justify-between xl:w-[400px] w-[250px] h-[350px] xl:h-[570px] relative">
-  <img loading="lazy" class="w-full h-auto object-cover" src="/PortalStart.png">
-  <img v-gsap.magnetic.strong v-motion-slide-visible-once-bottom loading="lazy" class="w-full bottom-20 -right-10 absolute h-auto object-cover festival-character" src="/char.png">
-  <img loading="lazy" class="w-full h-auto object-cover" src="/PortalEnd.png">
-</div>
-</div>
-
-</div>
-</div>
-
 </section>
 
 
@@ -603,8 +667,6 @@ class="w-full lg:h-[320px] h-[350px] media-card"
 
 </div>
 </section>    
-
-
 
 </template>
 

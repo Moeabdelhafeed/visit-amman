@@ -10,16 +10,24 @@
          scrollbar-track-rounded-full ">
 
     <Body  class="bg-cream">
+        <Loading v-if="showLoading"  />
         
-        <NavBarComponentVariant :ScrollNum="route.name == 'events' ?  0 :  route.name == 'about' || route.name == 'history' ? 100 :  150"  />
-        
-        <NuxtPage />
+        <NavBarComponent v-if="!showLoading" :ScrollNum="route.name == 'events' || route.name == 'destination' || route.name == 'event'  || route.name == 'destinations' ?  0 :  route.name == 'about' || route.name == 'history' ? 100 :  150"  />
+    
+        <NuxtPage  />
         <FooterComponent />
     </Body>
     </Html>
 </template>
 
 <script setup>
+
+const showLoading = ref(true)
+
+onMounted(async () => {
+    await nextTick()
+        showLoading.value = false
+})
 
 const route = useRoute()
 

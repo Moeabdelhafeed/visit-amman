@@ -31,7 +31,7 @@ class="
 active:rotate-2
 hover:rotate-2
 transition-all duration-300 transform
-text-black bg-white rounded-sm h-13 w-full px-6
+text-black bg-white rounded-sm h-12  px-6
 active:bg-slate-100 hover:bg-slate-200
 "
 >

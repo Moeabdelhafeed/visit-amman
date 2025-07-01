@@ -3,6 +3,7 @@
     :style="{ backgroundImage: `url('${destination?.url}')` }" class="
     text-white 
     flex 
+    
      hover:scale-105
      active:scale-105
     transition-all duration-300 transform
@@ -19,9 +20,12 @@
     p-6
     bg-center
     bg-no-repeat">
+    <div class="absolute inset-0 lg:backdrop-blur-[2px] group-hover:backdrop-blur-none transition-all duration-300">
+
+    </div>
 
 <div class="z-10 ">
-    <p class="text-3xl font-semibold">{{ destination?.title }}</p>
+    <p class="text-3xl  font-semibold">{{ destination?.title }}</p>
     <p class="text-white/70 mt-2" v-html="destination?.subtitle.replace(/\n/g,'<br>')"></p>
 </div>
 <div class="z-10 relative">
@@ -30,11 +34,11 @@ class="
 active:rotate-2
 hover:rotate-2
 transition-all duration-300 transform
-text-black bg-white rounded-sm h-13 w-full px-6
+text-black bg-white rounded-sm h-12  px-6
 active:bg-slate-100 hover:bg-slate-200
 "
 >
-Explore Location
+Explore {{destination.title}}
 </button>
 </div>
 

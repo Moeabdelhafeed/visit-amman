@@ -215,7 +215,7 @@
         />
         
         <!-- Interactive Hints -->
-        <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div class="absolute bottom-4 start-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span class="flex items-center gap-2">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -257,7 +257,7 @@
 </template>
 
 <script setup>
-import gsap from 'gsap'
+
 
 useHead({
   title:'About - Visit Amman'
@@ -297,8 +297,8 @@ onMounted(() => {
 })
 
 const onEnter = (el) => {
-  gsap.set(el, { opacity: 0, y: 30 })
-  gsap.to(el, {
+  useGSAP().set(el, { opacity: 0, y: 30 })
+  useGSAP().to(el, {
     opacity: 1,
     y: 0,
     duration: 0.8,
@@ -307,7 +307,7 @@ const onEnter = (el) => {
 }
 
 const onLeave = (el, done) => {
-  gsap.to(el, {
+  useGSAP().to(el, {
     opacity: 0,
     y: -30,
     duration: 0.3,

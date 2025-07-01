@@ -1,29 +1,33 @@
 <template>
-  <div class="drawerflex flex-col z-50 fixed top-0 left-0 w-full">
+  <div class="drawerflex flex-col z-50 fixed top-0 start-0 w-full">
+
+    
   
+    <img src="/charbutton.png"   class="absolute hidden md:block  xl:-end-6 w-35 -end-10 2xl:top-5 top-10 z-0 hover:scale-105  active:scale-105  transition duration-300 hover:rotate-2 active:rotate-2" alt="">
         <!-- scroll to top button -->
         <a href="#">
           
-    <button v-if="scrollY > ScrollNum"   class="fixed cursor-pointer text-xl transform translation  bottom-5 right-5 z-50 bg-web-primary text-white rounded-full p-3 shadow-lg hover:bg-web-primary-dark transition duration-300">
+    <button v-if="scrollY > ScrollNum"   class="fixed cursor-pointer text-xl transform translation  bottom-5 right-5  z-50 bg-web-primary text-white rounded-full p-3 shadow-lg hover:bg-web-primary-dark transition duration-300">
   
       <IconsUpArrow />
     </button>
       </a>
+       
   
       <!-- Drawer toggle -->
       <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
   
       <!-- Main content -->
-      <div :class="  scrollY < ScrollNum ? '   text-white' : ' bg-white text-web-brown'" class="drawer-content  transition-all duration-300">
+      <div :class="  scrollY < ScrollNum ? '   text-white' : ' bg-white text-web-brown'" class="drawer-content z-50   transition-all duration-300">
       <div class="navbar mx-auto container px-2 py-3.5 flex items-center justify-between" >
   
           <div class="flex gap-5 ">
-        <NuxtLink :to="{name: 'home'}" class="w-40 hidden  xl:block">
+        <NuxtLink :to="{name: 'home'}" class="w-30   hidden  xl:block">
           <img  loading="lazy" :src=" scrollY < ScrollNum ?  '/whitelogo.png' : '/colourfullogo.png' " alt="Logo" class="object-contain" />
       </NuxtLink>
             
           <!-- Horizontal menu (hidden on small screens) -->
-          <ul class="hidden xl:flex gap-10 items-center">
+          <ul class="hidden xl:flex gap-10 ms-3 items-center">
               <li><NuxtLink :to="{name: 'home'}" active-class="border-b-2 opacity-100" class="py-3"><button class="text-sm hover:opacity-100 cursor-pointer" :class="$route.name === 'home' ? 'opacity-100' : 'opacity-85'">Home</button></NuxtLink></li>
               
               <!-- About Dropdown -->
@@ -35,7 +39,7 @@
   <IconsDownArrowDropDown />
   </span>
               </button>
-              <ul  class="dropdown text-web-brown  [&_li>*:not(ul):not(.menu-title):not(details):active]:bg-web-primary dropdown-start menu w-52 rounded-box bg-base-100 shadow-sm"
+              <ul  class="dropdown text-web-brown  [&_li>*:not(ul):not(.menu-title):not(details):active]:bg-web-primary dropdown-start menu w-52 rounded-box -top-3 bg-base-100 shadow-sm"
               popover id="popover-3" style="position-anchor:--anchor-3">
               <li :class="$route.name == 'about'? 'bg-web-brown/10' : ''"  class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><NuxtLink :to="{name: 'about'}">About Amman</NuxtLink></li>
               <li :class="$route.name == 'history'? 'bg-web-brown/10' : ''" class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><NuxtLink :to="{name: 'history'}">History of Amman</NuxtLink></li>
@@ -54,25 +58,21 @@
   
           
   
-          <div class="hidden xl:flex  items-center justify-end ">
+          <div class="hidden xl:flex z-50 items-center justify-end ">
               
               
                   <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
-                  <button  popovertarget="popover-2" style="anchor-name:--anchor-2">
-                  <span class="text-2xl opacity-85 hover:opacity-100 cursor-pointer flex font-semibold border-e-1 mx-4 px-3">
-                      <IconsLanGlobe />
+                  <button  >
+                  <span class=" text-sm opacity-85 hover:opacity-100 cursor-pointer flex  border-e-1 mx-4 px-3">
+                      Arabic
                   </span>
               </button>
-              <ul v-if="langs" class="dropdown text-web-brown  [&_li>*:not(ul):not(.menu-title):not(details):active]:bg-web-primary dropdown-end menu w-52 rounded-box bg-base-100 shadow-sm"
-              popover id="popover-2" style="position-anchor:--anchor-2">
-              <li v-for="lang in langs" :key="lang" class=" text-web-brown active:bg-web-brown/10  hover:bg-web-brown/10 rounded-sm"><a>{{lang.name}}</a></li>
-              
-              </ul>
+            
               
               
-          <button class="text-white bg-web-purple cursor-pointer rounded-[5px] h-13   px-6 active:bg-web-purple-dark hover:bg-web-purple-dark transition duration-300">
+          <button :class="scrollY < ScrollNum  ? 'bg-white active:bg-slate-200 z-50 hover:bg-slate-200' : 'bg-web-purple active:bg-web-purple-dark hover:bg-web-purple-dark' " class=" cursor-pointer rounded-[5px] h-13   px-4  transition duration-300">
               <span class="flex items-center gap-4 justify-center">
-                  <img loading="lazy" class="object-contain w-4" src="/festivalIcon.png" alt=""> Amman Festival
+                  <img loading="lazy" class="object-contain w-5" src="/festivalIcon.png" alt="">
               </span>
           </button>
           </div>
@@ -90,34 +90,30 @@
       <!-- Center: Logo (absolute center) -->
       <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  ">
       <NuxtLink :to="{name: 'home'}" >
-          <img loading="lazy" :src=" scrollY < 150 ?  '/whitelogo.png' : '/colourfullogo.png' " alt="Logo" class="object-contain h-12" />
+          <img loading="lazy" :src=" scrollY < ScrollNum ?  '/whitelogo.png' : '/colourfullogo.png' " alt="Logo" class="object-contain h-12" />
       </NuxtLink>
       </div>
   
       <!-- Right: Language + Festival -->
-      <div class="flex items-center gap-2">
-      <button popovertarget="popover-1" style="anchor-name:--anchor-1">
-          <span class="text-2xl opacity-85 hover:opacity-100 cursor-pointer flex  md:border-e-1 mx-2 md:px-3">
-          <IconsLanGlobe />
+      <div class="flex items-center gap-2 z-50">
+      <button >
+          <span class=" text-sm  opacity-85 hover:opacity-100 cursor-pointer flex  md:border-e-1 mx-2 md:px-3">
+          Arabic
           </span>
       </button>
-  
-      <ul v-if="langs" class="dropdown text-web-brown [&_li>*:not(ul):not(.menu-title):not(details):active]:bg-web-primary dropdown-end menu w-52 rounded-box bg-base-100 shadow-sm" popover id="popover-1" style="position-anchor:--anchor-1">
-          <li v-for="lang in langs" :key="lang" class=" text-web-brown active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm">
-          <a>{{lang.name}}</a>
-          </li>
-      </ul>
-  
-      <button class="text-white cursor-pointer bg-web-purple rounded-[5px] hidden md:block h-13 px-6 hover:bg-web-purple-dark active:bg-web-purple-dark transition duration-300">
-          <span class="flex items-center gap-4 justify-center">
-          <img loading="lazy" class="object-contain w-4" src="/festivalIcon.png" alt=""> <span class="hidden xl:block"> Amman Festival </span> 
-          </span>
-      </button>
+
+      <button :class="scrollY < ScrollNum  ? 'bg-white active:bg-slate-200 hover:bg-slate-200' : 'bg-web-purple active:bg-web-purple-dark hover:bg-web-purple-dark' " class=" md:block hidden cursor-pointer rounded-[5px] h-13   px-4  transition duration-300">
+              <span class="flex items-center gap-4 justify-center">
+                  <img loading="lazy" class="object-contain w-5" src="/festivalIcon.png" alt="">
+              </span>
+          </button>
       </div>
   </div>
   
       </div>
       </div>
+
+    
   
       <!-- Drawer side menu -->
       <div class="drawer-side z-50">

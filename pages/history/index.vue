@@ -119,7 +119,6 @@
 </template>
 
 <script setup>
-import gsap from 'gsap'
 
 const Refs = ref(null)
 
@@ -242,8 +241,8 @@ onMounted(() => {
 })
 
 const onEnter = (el) => {
-    gsap.set(el, { opacity: 0, y: 30 })
-    gsap.to(el, {
+    useGSAP().set(el, { opacity: 0, y: 30 })
+    useGSAP().to(el, {
         opacity: 1,
         y: 0,
         duration: 0.8,
@@ -252,7 +251,7 @@ const onEnter = (el) => {
 }
 
 const onLeave = (el, done) => {
-    gsap.to(el, {
+    useGSAP().to(el, {
         opacity: 0,
         y: -30,
         duration: 0.3,
