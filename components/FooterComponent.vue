@@ -3,7 +3,7 @@
 
     <img src="/watermarkfullright.png" class="absolute opacity-10 end-0 w-[600px] " />
         <!-- Main Footer Content -->
-        <div class="container mx-auto px-4 py-16">
+        <div class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Brand Section -->
@@ -104,7 +104,7 @@
 
         <!-- Bottom Bar -->
         <div class="border-t border-white/20">
-            <div class="container mx-auto px-4 py-6">
+            <div class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4 py-6">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <div class="text-white/60 text-sm">
                         © {{ year }} Visit Amman. All rights reserved.

@@ -9,7 +9,7 @@
          scrollbar-thumb-rounded-full 
          scrollbar-track-rounded-full ">
 
-    <Body  class="bg-cream">
+    <Body  class="bg-cream selection:bg-web-primary/30">
         <Loading v-if="showLoading"  />
         
         <NavBarComponent v-if="!showLoading" :ScrollNum="route.name == 'events' || route.name == 'destination' || route.name == 'event'  || route.name == 'destinations' ?  0 :  route.name == 'about' || route.name == 'history' ? 100 :  150"  />

@@ -1,7 +1,7 @@
 <template>
     <div class="pt-20 " >
               <!-- bread crumbs -->
-<section class="container  mx-auto px-4">
+<section class="container max-w-[1280px]  md:px-20  lg:px-10   mx-auto px-4">
     <div class="breadcrumbs text-web-brown/70 text-sm pt-4">
         <ul>
             <li> 
@@ -20,13 +20,13 @@
 
 <!-- category section -->
 
-<section v-motion-slide-visible-once-bottom class=" container mx-auto px-4  ">
+<section v-motion-slide-visible-once-bottom class=" container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4  ">
   <div class="section-header text-web-brown pt-3">
 
-<p   v-motion-slide-visible-once-bottom  class="font-bold text-3xl mb-2">
+<p   v-motion-slide-visible-once-bottom  class="font-bold text-2xl mb-2">
     {{ content?.title }}
 </p>
-<p  v-motion-slide-visible-once-bottom class="text-lg text-web-brown/70">
+<p  v-motion-slide-visible-once-bottom class="text-base text-web-brown/70">
     {{ content?.subtitle }}
 </p>
     </div>
@@ -60,21 +60,21 @@
 </section>
 
 <!-- MAP SECTION -->
-<section v-motion-slide-visible-once-bottom class="container w-full mx-auto px-4">
+<section v-motion-slide-visible-once-bottom class="container max-w-[1280px]  md:px-20  lg:px-10  w-full mx-auto px-4">
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.4314771218446!2d35.92488971147532!3d31.94918922572201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b5f9b6d0df885%3A0x5ba66d57515d5d4!2sRainbow%20St.%2C%20Amman!5e0!3m2!1sen!2sjo!4v1751274572384!5m2!1sen!2sjo" class="w-full h-[350px]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 <!-- destinations grid -->
-<section   class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 w-max gap-6 container px-4 mx-auto my-5">
+<section   class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 w-max gap-6 container max-w-[1280px]  md:px-20  lg:px-10  px-4 mx-auto my-5">
   <DestinationCard v-motion-slide-visible-once-bottom :destination="destination" v-for="destination in content?.distenations" :key="destination" />
 </section>
 
 <!-- Divider -->
-<hr class="container mx-auto mt-8  border-gray-200">
+<hr class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto mt-8  border-gray-200">
 
 <!-- pagination -->
 
-<div class="container flex w-100 items-center justify-center px-4 mx-auto">
+<div class="container max-w-[1280px]  md:px-20  lg:px-10  flex w-100 items-center justify-center px-4 mx-auto">
   <div class="flex items-center gap-2 p-8">
     <button class="cursor-pointer hover:bg-web-primary/5 active:scale-95 transition-all duration-300 rounded-full h-[40px] w-[40px] text-web-brown flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

@@ -28,7 +28,7 @@
       <div class="flex items-center gap-1">
         <span class="text-web-brown/70  truncate">{{ destination?.location }}</span>
       </div>
-      <div class="w-[40px] h-[40px] bg-web-primary/10 rounded-full flex text-web-primary text-lg hover:bg-web-primary/20 duration-150 transition transform  items-center justify-center">
+      <div class="w-[40px] h-[40px] bg-web-primary/10 rounded-full flex text-web-primary text-base hover:bg-web-primary/20 duration-150 transition transform  items-center justify-center">
 
       <IconsPhone />
       </div>

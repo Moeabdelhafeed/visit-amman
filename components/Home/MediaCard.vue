@@ -22,7 +22,7 @@
     bg-no-repeat">
 
 <div class="z-10 ">
-    <p class="text-3xl font-semibold">{{ media?.title }}</p>
+    <p class="text-2xlxl font-semibold">{{ media?.title }}</p>
     <p class="text-white/70 mt-2">{{ media?.subtitle }}</p>
 </div>
 <div class="z-10 relative">

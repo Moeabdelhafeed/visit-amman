@@ -10,7 +10,7 @@
 
         
                       <!-- bread crumbs -->
-<section class="container  mx-auto px-4">
+<section class="container max-w-[1280px]  md:px-20  lg:px-10   mx-auto px-4">
     <div class="breadcrumbs text-web-brown/70 text-sm pt-4">
         <ul>
             <li> 
@@ -33,24 +33,24 @@
 </section>
 
 <!-- cover image -->
-<section class="mt-2 container relative mx-auto hover:scale-102 curose active:scale-102 px-4 transform transition lg:h-[50svh] h-[40svh]">
+<section class="mt-2 container max-w-[1280px]  md:px-20  lg:px-10  relative mx-auto hover:scale-102 curose active:scale-102 px-4 transform transition lg:h-[50svh] h-[40svh]">
   <div class="relative h-full w-full p-4 " 
     @click="openOverlay(destination?.coverimage)"
   >
     <div :style="{ backgroundImage: `url('${destination?.coverimage}')` }" class="h-full w-full absolute top-0 left-0 bg-cover bg-center cursor-pointer" @click="openOverlay(destination.coverimage)"></div>
     <div class="absolute top-0 left-0 w-full h-full  bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 h-full flex flex-col justify-end  text-white">
-      <p v-motion-slide-visible-once-bottom class="font-bold text-3xl">
+      <p v-motion-slide-visible-once-bottom class="font-bold text-2xl">
         {{ destination.name }}
       </p>
-      <p v-motion-slide-visible-once-bottom class="text-lg text-white/70">
+      <p v-motion-slide-visible-once-bottom class="text-base text-white/70">
         {{ destination?.category }}
       </p>
     </div>
   </div>
 </section>
 
-<section class=" lg:mt-4 mt-1.5 container px-4 mx-auto grid grid-cols-4 lg:gap-4 gap-1.5">
+<section class=" lg:mt-4 mt-1.5 container max-w-[1280px]  md:px-20  lg:px-10  px-4 mx-auto grid grid-cols-4 lg:gap-4 gap-1.5">
     <img 
       :src="image" 
       class="w-full object-cover transition transform hover:scale-102 active:scale-102 lg:h-[20svh] h-[10svh] cursor-pointer" 
@@ -61,12 +61,12 @@
     >
 </section>
 
-<section class="container px-4 mx-auto mt-10 flex flex-col lg:flex-row gap-5">
+<section class="container max-w-[1280px]  md:px-20  lg:px-10  px-4 mx-auto mt-10 flex flex-col lg:flex-row gap-5">
   <!-- Features column -->
   <div class="flex-1 flex flex-col justify-between">
     <div>
-      <p class="text-3xl font-semibold text-web-brown mb-2">{{ destination.features.title }}</p>
-      <p class="text-lg text-web-brown/70">{{ destination.features.subtitle }}</p>
+      <p class="text-2xl font-semibold text-web-brown mb-2">{{ destination.features.title }}</p>
+      <p class="text-base text-web-brown/70">{{ destination.features.subtitle }}</p>
     </div>
     <div class="grid grid-cols-3 mt-5 lg:gap-5 gap-2 h-fit">
       <div v-for="i in 6" :key="i" class="bg-web-primary/10 flex-col gap-3 text-web-primary hover:scale-105 h-[170px] active:scale-105 w-full flex justify-center items-center">
@@ -78,8 +78,8 @@
   <!-- Map column -->
   <div class="flex-1 flex flex-col   mt-5 lg:mt-0">
     <div>
-      <p class="text-3xl font-semibold text-web-brown mb-2">{{ destination.location.title }}</p>
-      <p class="text-lg text-web-brown/70">{{ destination.location.subtitle }}</p>
+      <p class="text-2xl font-semibold text-web-brown mb-2">{{ destination.location.title }}</p>
+      <p class="text-base text-web-brown/70">{{ destination.location.subtitle }}</p>
     </div>
 
     <section v-motion-slide-visible-once-bottom class="w-full mt-5  h-full flex flex-col">
@@ -89,17 +89,17 @@
   </div>
 </section>
 
-<section class="container mx-auto px-4 mt-10">
+<section class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4 mt-10">
     <div>
-      <p class="text-3xl font-semibold text-web-brown mb-2">{{ destination.name }}</p>
-      <p class="text-lg  text-web-brown/70" v-html="destination.description.replace(/\n/g,'<br>')"></p>
+      <p class="text-2xl font-semibold text-web-brown mb-2">{{ destination.name }}</p>
+      <p class="text-base  text-web-brown/70" v-html="destination.description.replace(/\n/g,'<br>')"></p>
     </div>
     
 </section>
 
-<section class="container mx-auto px-4 my-10">
+<section class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4 my-10">
     <div>
-      <p class="text-3xl font-semibold  text-web-brown mb-2">Related Destinations</p>
+      <p class="text-2xl font-semibold  text-web-brown mb-2">Related Destinations</p>
       <div class="grid lg:grid-cols-3 grid-cols-1 w-max gap-8"> 
         <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/astrolabe.png' , id: 8}"/>
         <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/astrolabe.png' , id: 8}"/>

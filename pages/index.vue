@@ -67,7 +67,7 @@ const onLeave = (el, done) => {
 const swiper = useSwiper(sliderRef, {
 loop: true,
 autoplay: {
-delay: 5000,
+delay: 7000,
 },
 allowTouchMove: true,
 simulateTouch: true,
@@ -204,10 +204,10 @@ locations:[
 },
 hero:{
 images: [
-{ url: '/citadel1.png', id: 0, title:'Citadel Heights', subtitle: 'Where every stone tells a story' },
+{ url: '/hero3.jpg', id: 0, title:'Citadel Heights', subtitle: 'Where every stone tells a story' },
 { url: '/hospitality.jpg', id: 1 , title:'A Taste of Jordanian Warmth', subtitle: 'Arrive as a guest, leave as family.'},
-{ url: '/citadel.png', id: 2 , title:'Amman After Dark', subtitle: 'The city glows with joy and possibility.'},
-{ url: '/dabkeh.jpg', id: 3 , title:'Living Heritage', subtitle: 'Traditions that dance with the present.'},
+{ url: '/hero4.jpg', id: 2 , title:'Amman After Dark', subtitle: 'The city glows with joy and possibility.'},
+{ url: '/hero5.jpg', id: 3 , title:'Living Heritage', subtitle: 'Traditions that dance with the present.'},
 ],
 },
 statistics: {
@@ -246,21 +246,27 @@ const locationsScroll = ref(null)
 <!-- hero section -->
 <section  v-if="content?.hero" class="relative z-0   h-svh w-full overflow-hidden inner-shadow">
 
+<img src="/herowatermark.png" class="absolute pointer-events-none z-50 lg:h-80 h-40" alt="">
+<img src="/herowatermark.png" class="absolute pointer-events-none z-50 end-0 lg:h-80 h-40 bottom-0 rotate-180" alt="">
 
 
   <div class="absolute pointer-events-none inset-0 z-30 flex flex-col justify-center items-center text-center text-white px-4">
-    <Transition
+    <GSAPTransition
       @enter="onEnter"
       @leave="onLeave"
       @appear="onEnter"
     >
-      <div v-if="showText" :key="activeIndex" class="text-content">
-        <h1 class="mb-5 text-4xl md:text-5xl lg:text-6x font-bold ">{{ content.hero.images[activeIndex].title }}</h1>
-        <p class="mb-8 text-lg text-white/90 leading-relaxed max-w-xl">
+      <div v-if="showText" :key="activeIndex" class="text-content text-center">
+        <h1 class="mb-3 text-4xl md:text-5xl  font-bold ">{{ content.hero.images[activeIndex].title }}</h1>
+        <p class="text-md md:text-lg  text-white/90 leading-relaxed ">
           {{ content.hero.images[activeIndex].subtitle }}
         </p>
+        <!-- <button   class="mt-5 cursor-pointer pointer-events-auto  active:rotate-2 hover:rotate-2 text-white bg-web-primary rounded-sm h-12  px-6 active:bg-web-primary-dark hover:bg-web-primary-dark transition duration-300 animated-button">
+        Explore Now
+        
+</button> -->
       </div>
-    </Transition>
+    </GSAPTransition>
   </div>
 
 <swiper-container   ref="sliderRef" :init="false" class="absolute inset-0 z-0">
@@ -271,7 +277,7 @@ const locationsScroll = ref(null)
 </swiper-container>
 
 <!-- Navigation Buttons - Hidden on lg screens and under -->
-<div class="absolute inset-0 z-40 hidden xl:flex items-center justify-between px-4 pointer-events-none">
+<!-- <div class="absolute inset-0 z-40 hidden xl:flex items-center justify-between px-4 pointer-events-none">
 <button 
   @click="swiper.prev()" 
   class="pointer-events-auto cursor-pointer w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -288,11 +294,11 @@ const locationsScroll = ref(null)
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
   </svg>
 </button>
-</div>
+</div> -->
 
 <!-- Pagination -->
-<div class="absolute bottom-25 left-1/2 transform -translate-x-1/2 z-50">
-<div class="swiper-pagination bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 [&_.swiper-pagination-bullet]:w-2 [&_.swiper-pagination-bullet]:h-2 [&_.swiper-pagination-bullet]:bg-white/50 [&_.swiper-pagination-bullet]:opacity-100 [&_.swiper-pagination-bullet]:rounded-full [&_.swiper-pagination-bullet]:transition-all [&_.swiper-pagination-bullet]:duration-300 [&_.swiper-pagination-bullet-active]:bg-white [&_.swiper-pagination-bullet-active]:scale-125 [&_.swiper-pagination-bullet:hover]:bg-white/70 [&_.swiper-pagination-bullet:hover]:scale-110 [&_.swiper-pagination]:!static [&_.swiper-pagination]:!flex [&_.swiper-pagination]:items-center [&_.swiper-pagination]:gap-2"></div>
+<div class="absolute bottom-25  left-1/2 transform -translate-x-1/2 z-50">
+<div class="swiper-pagination   backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 [&_.swiper-pagination-bullet]:w-2 [&_.swiper-pagination-bullet]:h-2 [&_.swiper-pagination-bullet]:bg-white/50 [&_.swiper-pagination-bullet]:opacity-100 [&_.swiper-pagination-bullet]:rounded-full [&_.swiper-pagination-bullet]:transition-all [&_.swiper-pagination-bullet]:duration-300 [&_.swiper-pagination-bullet-active]:bg-white [&_.swiper-pagination-bullet-active]:scale-125 [&_.swiper-pagination-bullet:hover]:bg-white/70 [&_.swiper-pagination-bullet:hover]:scale-110 [&_.swiper-pagination]:!static [&_.swiper-pagination]:!flex [&_.swiper-pagination]:items-center [&_.swiper-pagination]:gap-2"></div>
 </div>
 
 <div  class="absolute  mt-20 inset-0  flex flex-col justify-center items-center text-center text-white px-4 pointer-events-none">
@@ -308,14 +314,15 @@ const locationsScroll = ref(null)
 
 <section ref="locationsRef" v-if="content?.locations" class=" text-web-brown relative z-30  pt-20 xl:pt-30 ">
 <div>
-    <div class="md:flex  container overflow-visible px-4 mx-auto justify-between">
+
+    <div class="md:flex  container max-w-[1280px]  md:px-20  lg:px-10   overflow-visible px-4 mx-auto justify-between">
 
         <div class="section-header">
 
-    <p   v-motion-slide-visible-once-bottom  class="font-bold text-3xl mb-2">
+    <p   v-motion-slide-visible-once-bottom  class="font-bold text-2xl mb-2">
         {{ content?.locations?.title }}
     </p>
-    <p  v-motion-slide-visible-once-bottom class="text-lg text-web-brown/70">
+    <p  v-motion-slide-visible-once-bottom class="text-md text-web-brown/70">
         {{ content?.locations?.subtitle }}
     </p>
         </div>
@@ -334,11 +341,12 @@ const locationsScroll = ref(null)
 
 
 
+
     <div class="relative  w-full">
       <!-- Left Arrow -->
       <button
         @click="scrollLocations('left')"
-        class=" items-center hover:scale-110 hidden xl:flex text-white bg-web-primary hover:bg-web-primary-dark active:bg-web-primary-dark justify-center absolute start-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12    rounded-full shadow transition"
+        class=" items-center hover:scale-110 hidden md:flex text-white bg-web-primary hover:bg-web-primary-dark active:bg-web-primary-dark justify-center absolute start-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12    rounded-full shadow transition"
         aria-label="Scroll left"
       >
       <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -348,7 +356,7 @@ const locationsScroll = ref(null)
       <!-- Right Arrow -->
       <button
         @click="scrollLocations('right')"
-        class=" items-center  text-white hidden xl:flex hover:scale-110 bg-web-primary hover:bg-web-primary-dark active:bg-web-primary-dark justify-center absolute right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12  rounded-full shadow transition"
+        class=" items-center  text-white hidden md:flex hover:scale-110 bg-web-primary hover:bg-web-primary-dark active:bg-web-primary-dark justify-center absolute right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12  rounded-full shadow transition"
         aria-label="Scroll right"
       >
       <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -357,14 +365,14 @@ const locationsScroll = ref(null)
       </button>
       <!-- Scrollable Area -->
       <div
-        class="scrollbar-thin scrollbar-thumb-web-brown scrollbar-track-web-brown/20 scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-x-auto mx-auto flex flex-row py-10 snap-x snap-mandatory w-full"
+        class="scrollbar-thin [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scrollbar-thumb-web-brown scrollbar-track-web-brown/20 scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-x-auto mx-auto flex flex-row mt-10 snap-x snap-mandatory w-full"
         ref="locationsScroll"
       >
         <div class="flex"   >
           <div
             v-for="(location, index) in content?.locations?.locations"
             :key="index"
-            class="snap-start w-max px-4 "
+            class="snap-start w-max px-2 "
             ref="locationCards"
           >
             <HomeLocationCard v-motion-slide-visible-once-right :location="location" />
@@ -388,14 +396,14 @@ const locationsScroll = ref(null)
 
 <section v-if="content?.events" class=" text-web-brown relative z-30  pt-10 xl:pt-25 ">
 <div >
-    <div class="md:flex container overflow-visible px-4 mx-auto justify-between">
+    <div class="md:flex container max-w-[1280px]  md:px-20  lg:px-10  overflow-visible px-4 mx-auto justify-between">
 
         <div class="section-header">
 
-    <p v-motion-slide-visible-once-bottom class="font-bold text-3xl mb-2">
+    <p v-motion-slide-visible-once-bottom class="font-bold text-2xl mb-2">
         {{ content?.events?.title }}
     </p>
-    <p v-motion-slide-visible-once-bottom class="text-lg text-web-brown/70">
+    <p v-motion-slide-visible-once-bottom class="text-md text-web-brown/70">
         {{ content?.events?.subtitle }}
     </p>
         </div>
@@ -410,9 +418,9 @@ const locationsScroll = ref(null)
 </button>
 
     </div>
-    <div class="container flex justify-center mx-auto px-4">
+    <div class="container max-w-[1280px]  md:px-20  lg:px-10  flex justify-center mx-auto px-4">
 
-<div class="mt-10 grid grid-cols-1 w-max  lg:grid-cols-2 xl:grid-cols-3 gap-8">
+<div class="mt-10 grid grid-cols-1 w-max  lg:grid-cols-2 xl:grid-cols-3 gap-4">
 <div 
 v-for="(event, index) in content.events.events"
 :key="index"
@@ -430,14 +438,14 @@ class="event-card"
 
 <section v-if="content?.destinations" class=" text-web-brown relative z-30 pt-20 xl:pt-30 ">
 <div >
-    <div class="md:flex container overflow-visible px-4 mx-auto justify-between">
+    <div class="md:flex container max-w-[1280px]  md:px-20  lg:px-10  overflow-visible px-4 mx-auto justify-between">
 
         <div class="section-header">
 
-    <p v-motion-slide-visible-once-bottom    class="font-bold text-3xl mb-2">
+    <p v-motion-slide-visible-once-bottom    class="font-bold text-2xl mb-2">
         {{ content?.destinations?.title }}
     </p>
-    <p v-motion-slide-visible-once-bottom  class="text-lg text-web-brown/70">
+    <p v-motion-slide-visible-once-bottom  class="text-md text-web-brown/70">
         {{ content?.destinations?.subtitle }}
     </p>
         </div>
@@ -452,8 +460,8 @@ class="event-card"
 </button>
 
     </div>
-  <div class="container mx-auto px-4">
-<div class="mt-10 grid lg:grid-cols-2    gap-8">
+  <div class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4">
+<div class="mt-10 grid lg:grid-cols-2    gap-4">
 <div
 
 class="w-full  h-[250px] destination-card"
@@ -473,9 +481,9 @@ v-for="(destination, index) in content.destinations.destinations"
 
 <!-- Statistics Section -->
 <section  v-motion-slide-visible-once-bottom  v-if="content?.statistics" class="relative text-web-brown z-30 pt-20 xl:pt-25 ">
-  <div class="container mx-auto px-4">
+  <div class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4">
     <div class="text-center mb-10 section-header">
-      <h2 class="font-bold text-3xl mb-4">{{ content?.statistics?.title }}</h2>
+      <h2 class="font-bold text-2xl mb-4">{{ content?.statistics?.title }}</h2>
       <div class="w-24 h-1 bg-web-primary mx-auto rounded-full"></div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-6 gap-8">
@@ -494,14 +502,14 @@ src="/bagWatermark.png"
 class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-start-30 -start-60 pointer-events-none select-none"
 />
 
-<div class="container relative z-10 px-4 mx-auto  xl:mt-0">
+<div class="container max-w-[1280px]  md:px-20  lg:px-10  relative z-10 px-4 mx-auto  xl:mt-0">
 
 <div class="xl:grid flex flex-col xl:grid-cols-2 py-10 ">
 
 <!-- Text Side -->
 <div v-motion-slide-visible-once-bottom   class="flex flex-col xl:order-1 order-2  justify-center items-start gap-4 festival-content">
-<h2  class="text-3xl   font-bold mb-4">{{ content?.ammanFestival?.title }}</h2>
-<p  class="text-lg text-white/70 mb-6 text-start leading-relaxed" v-html="content?.ammanFestival?.body.replace(/\n/g,'<br>')"></p>
+<h2  class="text-2xl   font-bold mb-4">{{ content?.ammanFestival?.title }}</h2>
+<p  class="text-md text-white/70 mb-6 text-start leading-relaxed" v-html="content?.ammanFestival?.body.replace(/\n/g,'<br>')"></p>
 <div   class="flex flex-col xl:flex-row gap-4   justify-start">
 
 <button   class="text-web-purple cursor-pointer  hover:bg-slate-100 hover:rotate-2 active:rotate-2 active:bg-slate-100 bg-white rounded-[5px] h-13 px-6 transition duration-300 animated-button festival-btn">
@@ -530,7 +538,7 @@ class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-start-30 -st
 
 <section v-if="content?.about" class="relative text-web-brown pt-20 xl:pt-30 z-20">
 <div>
-  <div class="container relative overflow-visible px-4 mx-auto justify-between">
+  <div class="container max-w-[1280px]  md:px-20  lg:px-10  relative overflow-visible px-4 mx-auto justify-between">
     <div class=" xl:grid grid-cols-2 justify-between gap-8">
       
       <!-- Amman Image (Mobile First, Desktop Second) -->
@@ -547,16 +555,16 @@ class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-start-30 -st
       <!-- Left Content -->
       <div class="flex   rounded-sm  flex-col mt-15 xl:mt-0 gap-8 order-2 xl:order-1 about-content">
         <div class="w-full flex flex-col">
-          <p v-motion-slide-visible-once-bottom  class="font-bold  text-3xl mb-2">
+          <p v-motion-slide-visible-once-bottom  class="font-bold  text-2xl mb-2">
             {{ content?.about?.title }}
           </p>
-          <p v-motion-slide-visible-once-bottom  class="text-lg text-web-brown/70">
+          <p v-motion-slide-visible-once-bottom  class="text-md text-web-brown/70">
             <img  src="/sloganEnglish.png" class="h-8" alt="">
           </p>
         </div>
 
         <p  v-motion-slide-visible-once-bottom v-html="content?.about?.body.replace(/\n/g,'<br>')"
-            class="text-start xl:mt-0 mt-3 text-lg text-web-brown/70 leading-relaxed">
+            class="text-start xl:mt-0 mt-3 text-md text-web-brown/70 leading-relaxed">
         </p>
 
         <div>
@@ -590,7 +598,7 @@ class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-start-30 -st
     <div class="py-10 lg:py-15">
 
     <div v-motion-slide-visible-once-bottom class="text-center mb-5 section-header">
-      <h3 class="text-3xl font-bold mb-5 tracking-tight">
+      <h3 class="text-2xl font-bold mb-5 tracking-tight">
         {{content?.sponsors?.title}}
       </h3>
       <div class="w-24 h-1 bg-white/30 mx-auto rounded-full"></div>
@@ -621,14 +629,14 @@ class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-start-30 -st
 
 <section v-if="content?.mediahub" class=" text-web-brown relative z-30 py-20 xl:py-30 ">
 <div >
-    <div class="md:flex container overflow-visible px-4 mx-auto justify-between">
+    <div class="md:flex container max-w-[1280px]  md:px-20  lg:px-10  overflow-visible px-4 mx-auto justify-between">
 
         <div class="section-header">
 
-    <p v-motion-slide-visible-once-bottom class="font-bold text-3xl mb-2">
+    <p v-motion-slide-visible-once-bottom class="font-bold text-2xl mb-2">
         {{ content?.mediahub?.title }}
     </p>
-    <p v-motion-slide-visible-once-bottom class="text-lg text-web-brown/70">
+    <p v-motion-slide-visible-once-bottom class="text-md text-web-brown/70">
         {{ content?.mediahub?.subtitle }}
     </p>
         </div>
@@ -636,7 +644,7 @@ class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-start-30 -st
         
 
     </div>
-  <div class="container mx-auto px-4">
+  <div class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4">
 <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
 <div
 

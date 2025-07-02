@@ -1,8 +1,8 @@
 <template>
-    <div class="flex group transition-all  active:scale-105 transform duration-150 hover:scale-105 hover:shadow-2xl flex-col h-[600px] max-w-[450px]  w-full  overflow-hidden bg-white shadow-xl shadow-black/5 rounded-sm relative"
+    <div class="flex group transition-all max-w-[600px]  transform duration-150 hover:scale-102 hover:shadow-2xl flex-col h-[600px]   w-full  overflow-hidden bg-white shadow-2xl shadow-black/5 rounded-sm relative"
     
     >
-    <div class="bg-cover w-full  h-[350px] z-20 flex flex-col justify-between  bg-center bg-no-repeat" 
+    <div class="bg-cover w-full  h-[30svh] max-h-[350px] z-20 flex flex-col justify-between  bg-center bg-no-repeat" 
       :style="{ backgroundImage: `url('${event?.url}')` }" 
     >
     <div class="w-full group-hover:scale-100 flex justify-end">
@@ -29,14 +29,14 @@
         </div>
         <div>
             <div class="py-2.5">
-            <div class="bg-web-primary/10  text-web-primary px-4 py-2 rounded-full  w-max">
+            <div class="bg-web-primary/10   text-web-primary px-4 py-2 rounded-full  w-max">
                 <p class="text-sm">{{ event?.category }}</p>
             </div>
         </div>
             </div>
         </div>
-        <h3 class="text-xl  text-web-brown ">{{ event?.title }}</h3>
-        <p class="text-web-brown/70 " v-html="event?.description.replace(/\n/g,'<br>')"></p>
+        <h3 class="text-lg  text-web-brown line-clamp-2 ">{{ event?.title }}</h3>
+        <p class="text-web-brown/70 text-base line-clamp-2 " v-html="event?.description.replace(/\n/g,'<br>')"></p>
 
         <!-- Enhanced Countdown Design -->
         <div class="relative">
@@ -99,6 +99,7 @@ transition-all duration-300 transform
 
 text-white bg-web-primary text-whit rounded-sm h-12 w-full px-6
 active:bg-web-primary-dark  hover:bg-web-primary-dark
+cursor-pointer
 "
 >
             Explore Event
@@ -106,9 +107,9 @@ active:bg-web-primary-dark  hover:bg-web-primary-dark
     </div>
 
     <img
-    src="/Watermark.png"
+    src="/herowatermark.png"
     alt="Watermark Left"
-    class="absolute w-[200px] z-0 -end-15  -bottom-15 -rotate-30 "
+    class="absolute w-[200px] z-0 bottom-0 opacity-20 end-0 rotate-180 "
   />
 
 

@@ -13,12 +13,12 @@
         <div class="w-24 h-1 bg-white mx-auto mb-8 rounded-full opacity-80"></div>
         
         <!-- Title -->
-        <h1 class="text-white w-full text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+        <h1 class="text-white w-full text-4xl md:text-5xl  font-bold mb-4">
        History of Amman
         </h1>
         
         <!-- Subtitle -->
-        <p class="text-white px-5 text-lg  opacity-90 max-w-2xl mx-auto">
+        <p class="text-white px-5 text-base  opacity-90 max-w-2xl mx-auto">
         Journey through millennia of civilization, where every stone tells a story of conquest, culture, and continuity
         </p>
     </div>
@@ -27,7 +27,7 @@
 </section>
 
 <!-- bread crumbs -->
-<section class="container mx-auto px-4">
+<section class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4">
     <div class="breadcrumbs text-web-brown/70 text-sm pt-4">
         <ul>
             <li> 
@@ -50,31 +50,31 @@
 </section>
 
 <!-- intro -->
-<section class="container mx-auto text-web-brown text-center lg:px-50 px-4 pt-16" v-if="content?.intro">
+<section class="container max-w-[1280px]  md:px-20    mx-auto text-web-brown text-center lg:px-50 px-4 pt-16" v-if="content?.intro">
     <div class="mx-auto">
         <!-- Decorative Line -->
-        <h2 v-motion-slide-visible-once-bottom class="font-bold order-1 text-3xl mb-6">
+        <h2 v-motion-slide-visible-once-bottom class="font-bold order-1 text-2xl mb-6">
             {{content?.intro?.title}}
         </h2>
         <div v-motion-slide-visible-once-bottom class="w-24 h-1 bg-web-primary mx-auto mb-8 rounded-full opacity-80"></div>
         
         <div v-motion-slide-visible-once-bottom class="flex flex-col">
-            <p v-html="content?.intro?.body.replace(/\n/g,'<br>')" class="text-web-brown/70 order-2 text-lg leading-relaxed w-full">
+            <p v-html="content?.intro?.body.replace(/\n/g,'<br>')" class="text-web-brown/70 order-2 text-base leading-relaxed w-full">
             </p>
         </div>
     </div>
 </section>
 
 <!-- Divider -->
-<hr class="container mx-auto my-12 xl:my-20 border-gray-200">
+<hr class=" max-w-[1280px] mx-auto my-12 xl:my-20 border-gray-200">
 
 <!-- Timeline Section -->
-<section class="container mx-auto text-web-brown px-4">
+<section class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto text-web-brown px-4">
     <div class="mx-auto">
 
         
         <!-- Timeline Items -->
-        <div class="lg:px-30" >
+        <div  >
             <div v-for="(period, index) in historicalPeriods" :key="index" 
                  class="timeline-item"
                  v-motion-slide-visible-once-bottom>
@@ -86,7 +86,7 @@
                     <div class="flex w-full gap-5 ">
                         <div>
 
-                    <h3 class="text-4xl font-bold text-web-brown mb-6">
+                    <h3 class="text-2xl font-bold text-web-brown mb-6">
                         {{ period.title }}
                     </h3>
                     
@@ -94,7 +94,7 @@
                     <div class="w-24 h-1 bg-web-primary mb-6 rounded-full opacity-80"></div>
                     
                     <!-- Description -->
-                    <p class="text-web-brown/70 leading-relaxed  text-lg mb-8 ">
+                    <p class="text-web-brown/70 leading-relaxed  text-base mb-8 ">
                         {{ period.description }}
                     </p>
                         </div>
@@ -109,7 +109,7 @@
                    
                 </div>
 
-<hr class="container mx-auto my-12 xl:my-20 border-gray-200">
+<hr class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto my-12 xl:my-20 border-gray-200">
             </div>
         </div>
     </div>

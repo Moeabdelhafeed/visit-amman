@@ -9,12 +9,12 @@
     <div class="flex flex-col items-center whitespace-nowrap">
     <span 
         ref="numberRef"
-        class="text-4xl md:text-5xl font-extrabold text-web-primary mb-3"
+        class="text-3xl md:text-4xl font-extrabold text-web-primary mb-3"
         :data-target="stat.number"
     >
         0
     </span>
-    <span class="text-base md:text-lg text-web-brown/80 font-medium text-center">{{ stat.label }}</span>
+    <span class="text-base text-web-brown/80 font-medium text-center">{{ stat.label }}</span>
     </div>
 </div>
 </template>
