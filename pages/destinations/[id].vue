@@ -33,12 +33,17 @@
 </section>
 
 <!-- cover image -->
-<section class="mt-2 container max-w-[1280px]  md:px-20  lg:px-10  relative mx-auto hover:scale-102 curose active:scale-102 px-4 transform transition lg:h-[50svh] h-[40svh]">
+<section class=" group container max-w-[1280px]  mt-5 md:px-20  lg:px-10  relative mx-auto hover:scale-102 curose active:scale-102 px-4 transform transition lg:h-[50svh] h-[40svh]">
   <div class="relative h-full w-full p-4 " 
     @click="openOverlay(destination?.coverimage)"
   >
+  <div>
+            <button  class="absolute top-3 right-3 z-10 text-white text-xl bg-white/30 backdrop-blur-sm rounded-full  w-9 h-9  lg:w-9 lg:h-9 text-md flex items-center justify-center group-hover:bg-white/50 transition "><IconsMax /></button>
+    
+  </div>
     <div :style="{ backgroundImage: `url('${destination?.coverimage}')` }" class="h-full w-full absolute top-0 left-0 bg-cover bg-center cursor-pointer" @click="openOverlay(destination.coverimage)"></div>
-    <div class="absolute top-0 left-0 w-full h-full  bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+     <div class="absolute top-0 left-0 w-full h-full  bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+   
     <div class="relative z-20 h-full flex flex-col justify-end  text-white">
       <p v-motion-slide-visible-once-bottom class="font-bold text-2xl">
         {{ destination.name }}
@@ -68,10 +73,11 @@
       <p class="text-2xl font-semibold text-web-brown mb-2">{{ destination.features.title }}</p>
       <p class="text-base text-web-brown/70">{{ destination.features.subtitle }}</p>
     </div>
-    <div class="grid grid-cols-3 mt-5 lg:gap-5 gap-2 h-fit">
-      <div v-for="i in 6" :key="i" class="bg-web-primary/10 flex-col gap-3 text-web-primary hover:scale-105 h-[170px] active:scale-105 w-full flex justify-center items-center">
-        <IconsPeople class="text-4xl" />
-        <p class="text-xl">Feature</p>
+    <div class="grid lg:grid-cols-3 grid-cols-2  mt-5  gap-4 h-fit">
+      <div v-for="i in 6" :key="i" class="bg-white relative flex-col shadow-web gap-3 text-web-primary  h-[170px]  w-full flex justify-center items-center">
+         <img src="/herowatermark.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
+        <IconsPeople class="text-5xl" />
+        <p class="text-base font-medium text-web-brown">Feature</p>
       </div>
     </div>
   </div>
@@ -100,7 +106,7 @@
 <section class="container max-w-[1280px]  md:px-20  lg:px-10  mx-auto px-4 my-10">
     <div>
       <p class="text-2xl font-semibold  text-web-brown mb-2">Related Destinations</p>
-      <div class="grid lg:grid-cols-3 grid-cols-1 w-max gap-8"> 
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8"> 
         <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/astrolabe.png' , id: 8}"/>
         <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/astrolabe.png' , id: 8}"/>
         <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/astrolabe.png' , id: 8}"/>

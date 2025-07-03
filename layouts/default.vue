@@ -9,8 +9,11 @@
          scrollbar-thumb-rounded-full 
          scrollbar-track-rounded-full ">
 
-    <Body  class="bg-cream selection:bg-web-primary/30">
+    <Body  class="bg-cream selection:bg-web-primary/30 overflow-x-hidden">
+    <GSAPTransition @leave="onLeave">
+
         <Loading v-if="showLoading"  />
+    </GSAPTransition>
         
         <NavBarComponent v-if="!showLoading" :ScrollNum="route.name == 'events' || route.name == 'destination' || route.name == 'event'  || route.name == 'destinations' ?  0 :  route.name == 'about' || route.name == 'history' ? 100 :  150"  />
     
@@ -24,6 +27,13 @@
 
 const showLoading = ref(true)
 
+const onLeave = (el) => {
+    useGSAP().to(el , {
+        y: 400,
+        opacity:1,
+        duration:0.7,
+    })
+}
 onMounted(async () => {
     await nextTick()
         showLoading.value = false

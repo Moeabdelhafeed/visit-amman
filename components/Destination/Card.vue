@@ -2,40 +2,51 @@
   <NuxtLink :to="{name: 'destination', params:{id : destination.id }}">
   <div
   
-    class="flex flex-col w-[calc(100vw-2rem)] max-w-[400px] bg-white rounded-sm transition-all active:scale-105 transform duration-200 hover:scale-105  relative overflow-hidden shadow-xl shadow-black/5 group"
+    class="flex flex-col group   bg-white rounded-sm transition-all  transform duration-200   relative overflow-hidden shadow-web group"
   >
-    <!-- Category Badge -->
-    <div class="bg-web-turq absolute top-4 start-4 text-white px-4 py-1.5 rounded-full text-sm  shadow-sm z-20">
-      {{ destination?.category }}
-    </div>
+  
 
     <!-- Image with overlay and subtle zoom on hover -->
-    <div class="relative p-2  h-[230px] overflow-hidden">
+    <div class="relative   h-[200px] overflow-hidden">
       <img
         :src="destination?.image"
-        class="object-cover  w-full rounded-sm h-full transition-transform duration-300 "
+        class="object-cover group-hover:scale-105 group-active:scale-105  w-full  h-full transition-transform duration-300 "
         alt=""
       />
 
       
     </div>
+      <img class="absolute bottom-0 indent-0 opacity-20 -start-6 w-[200px] -rotate-90" src="/herowatermarkfull.png" alt="">
 
     <!-- Card Content -->
-    <div class="flex-1 flex flex-col justify-between p-5 pt-1 ">
+    <div class="flex-1 relative flex flex-col justify-between p-6  ">
       <!-- Location -->
       <div class="flex justify-between">
 
-      <div class="flex items-center gap-1">
-        <span class="text-web-brown/70  truncate">{{ destination?.location }}</span>
+      <div class="flex flex-col justify-center gap-2.5">
+      <h3 class="text-xl  font-bold text-web-brown leading-tight truncate">{{ destination?.name }}</h3>
+        <div class="flex gap-1.5 items-center">
+          <div class="text-xl text-web-primary">
+            <IconsLocation />
+          </div>
+        <span class="text-web-brown/70 text-sm   truncate">{{ destination?.location }}</span>
+        </div>
       </div>
-      <div class="w-[40px] h-[40px] bg-web-primary/10 rounded-full flex text-web-primary text-base hover:bg-web-primary/20 duration-150 transition transform  items-center justify-center">
 
-      <IconsPhone />
+      <div>
+        <button
+             
+              class="flex items-center text-sm bg-web-primary/15 gap-3 cursor-pointer text-web-primary px-4 py-2 rounded-full w-max"
+          
+            >
+            {{ destination?.category }}
+          
+            </button>
       </div>
+      
 
       </div>
       <!-- Name -->
-      <h3 class="text-xl  font-bold text-web-brown leading-tight truncate">{{ destination?.name }}</h3>
       <!-- Explore Button -->
 
       <button
@@ -43,7 +54,7 @@ class="
 hover:rotate-2
 active:rotate-2
 transition-all duration-300 transform
-mt-3
+mt-5
 
 text-white bg-web-primary text-whit rounded-sm h-12 w-full px-6
 active:bg-web-primary-dark  hover:bg-web-primary-dark

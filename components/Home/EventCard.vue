@@ -1,5 +1,5 @@
 <template>
-    <div class="flex group transition-all max-w-[600px]  transform duration-150 hover:scale-102 hover:shadow-2xl flex-col h-[600px]   w-full  overflow-hidden bg-white shadow-2xl shadow-black/5 rounded-sm relative"
+    <div class="flex group transition-all max-w-[600px]  transform duration-150 hover:scale-102 shadow-web flex-col h-[600px]   w-full  overflow-hidden bg-white  rounded-sm relative"
     
     >
     <div class="bg-cover w-full  h-[30svh] max-h-[350px] z-20 flex flex-col justify-between  bg-center bg-no-repeat" 
@@ -29,7 +29,7 @@
         </div>
         <div>
             <div class="py-2.5">
-            <div class="bg-web-primary/10   text-web-primary px-4 py-2 rounded-full  w-max">
+            <div class="bg-web-primary/15   text-web-primary px-4 py-2 rounded-full  w-max">
                 <p class="text-sm">{{ event?.category }}</p>
             </div>
         </div>
