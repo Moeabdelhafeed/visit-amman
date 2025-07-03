@@ -823,7 +823,7 @@ const locationsScroll = ref(null);
         <div
           v-for="(sponsor, index) in content?.sponsors?.sponsors"
           :key="index"
-          class="group w-full  relative shadow-web rounded-sm  h-[200px]  flex items-center justify-center  bg-white backdrop-blur-sm  transition-all duration-300 hover:scale-105 "
+          class="group w-full  relative shadow-web rounded-sm  h-[200px]  flex items-center justify-center  bg-white backdrop-blur-sm  transition-all duration-300 hover:scale-105 active:scale-105" 
         >
           <!-- Subtle gradient overlay -->
           <div v-motion-slide-visible-once-bottom class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent "></div>
@@ -833,12 +833,12 @@ const locationsScroll = ref(null);
               loading="lazy"
               :src="`${sponsor.url}`"
               alt="Sponsor Logo"
-              class="max-h-full max-w-full h-25 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+              class="max-h-full max-w-full h-25 object-contain filter grayscale group-hover:grayscale-0 group-active:grayscale-0 transition-all duration-300"
             />
           </div>
           
           <!-- Hover effect ring -->
-          <div class="absolute inset-0  ring-2 ring-web-primary/0 group-hover:ring-web-primary transition-all duration-300"></div>
+          <div class="absolute inset-0  ring-2 ring-web-primary/0 group-hover:ring-web-primary group-active:ring-web-primary transition-all duration-300"></div>
         </div>
       </div>
     </div>
