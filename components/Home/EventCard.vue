@@ -1,4 +1,6 @@
 <template>
+  <NuxtLink :to="{name: 'event', params:{ id: event.id}}">
+
     <div class="flex group transition-all max-w-[600px]  transform duration-150 hover:scale-102 shadow-web flex-col h-[600px]   w-full  overflow-hidden bg-white  rounded-sm relative"
     
     >
@@ -114,6 +116,7 @@ cursor-pointer
 
 
     </div>
+  </NuxtLink>
 </template>
 
 <script setup>

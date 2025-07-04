@@ -1,11 +1,17 @@
 <template>
     <!-- overlay of the image -->
-    <section v-if="showOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80" @click.self="closeOverlay">
-      <div class="relative max-w-3xl w-full mx-4">
-        <button @click="closeOverlay" class="absolute top-3 right-3 z-10 text-white text-2xl bg-white/30 backdrop-blur-sm rounded-full  w-8 h-8 lg:w-9 lg:h-9 text-md flex items-center justify-center hover:bg-white/50 transition">&times;</button>
-        <img :src="overlayImage" class="w-full max-h-[80vh] object-contain shadow-lg" alt="Preview" />
-      </div>
-    </section>
+    <section v-if="showOverlay" class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/80" @click.self="closeOverlay">
+    <div class="relative w-max mx-4">
+      <img :src="overlayImage" class="w-full max-h-[80vh] object-contain shadow-lg" alt="Preview" />
+      <button
+        @click="closeOverlay"
+        class="absolute top-3  end-3 z-10 text-white text-2xl bg-white/30 backdrop-blur-sm rounded-full w-8 h-8 lg:w-9 lg:h-9 text-md flex items-center justify-center hover:bg-white/50 transition"
+        style="pointer-events: auto;"
+      >
+        &times;
+      </button>
+    </div>
+  </section>
     <div class="pt-20">
 
         
@@ -20,7 +26,7 @@
             </li>
             <li> 
                 <NuxtLink :to="{name: 'destinations'}">
-                    Destinations
+                    Where to Go
                 </NuxtLink> 
             </li>
             <li> 
@@ -38,7 +44,7 @@
     @click="openOverlay(destination?.coverimage)"
   >
   <div>
-            <button  class="absolute top-3 right-3 z-10 text-white text-xl bg-white/30 backdrop-blur-sm rounded-full  w-9 h-9  lg:w-9 lg:h-9 text-md flex items-center justify-center group-hover:bg-white/50 transition "><IconsMax /></button>
+            <button  class="absolute top-3 end-3 z-10 text-white text-xl bg-white/30 backdrop-blur-sm rounded-full  w-9 h-9  lg:w-9 lg:h-9 text-md flex items-center justify-center group-hover:bg-white/50 transition "><IconsMax /></button>
     
   </div>
     <div :style="{ backgroundImage: `url('${destination?.coverimage}')` }" class="h-full w-full absolute top-0 left-0 bg-cover bg-center cursor-pointer" @click="openOverlay(destination.coverimage)"></div>

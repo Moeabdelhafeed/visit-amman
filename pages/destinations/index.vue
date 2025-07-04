@@ -39,7 +39,7 @@
                 <IconsLocation class="text-web-primary text-2xl" />
               </div>
               <p class="text-xl">
-                Locations
+                Filter by Locations
               </p>
             </div>
 
@@ -117,7 +117,7 @@
               <IconsCategories class="text-web-primary text-2xl" />
             </div>
             <p class="text-xl">
-              Categories
+              Filter by Categories
             </p>
             </div>
             <button
@@ -158,7 +158,7 @@
     </section>
 
     <!-- destinations grid -->
-    <section class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 container  max-w-[1280px]  md:px-20  lg:px-10  px-4 mx-auto my-10">
+    <section class="grid items-center justify-center gird-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 container  max-w-[1280px]  md:px-20  lg:px-10  px-4 mx-auto my-10">
       <DestinationCard v-motion-slide-visible-once-bottom :destination="destination" v-for="destination in content?.distenations" :key="destination" />
     </section>
 

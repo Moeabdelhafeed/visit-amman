@@ -127,14 +127,14 @@
               <NuxtLink
                 :to="{ name: 'destinations' }"
                 class="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
-                >Destinations</NuxtLink
+                >Where to Go</NuxtLink
               >
             </li>
             <li>
               <NuxtLink
                 :to="{ name: 'events' }"
                 class="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
-                >Events</NuxtLink
+                >Happening in Amman</NuxtLink
               >
             </li>
             <li>

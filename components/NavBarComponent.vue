@@ -66,13 +66,14 @@
               >
                 <li
                   :class="$route.name == 'about' ? 'bg-web-brown/10' : ''"
-                  class="text-web-brown text-xs font-bold active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm"
+                  class="text-web-brown opacity-85 text-xs font-bold active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm"
                 >
+                
                   <NuxtLink :to="{ name: 'about' }">About Amman</NuxtLink>
                 </li>
                 <li
                   :class="$route.name == 'history' ? 'bg-web-brown/10' : ''"
-                  class="text-web-brown text-xs font-bold active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm"
+                  class="text-web-brown   text-xs font-bold active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm"
                 >
                   <NuxtLink :to="{ name: 'history' }">History of Amman</NuxtLink>
                 </li>
@@ -101,7 +102,7 @@
                   class="text-xs font-bold hover:opacity-100 cursor-pointer"
                   :class="$route.name === 'destinations' ? 'opacity-100' : 'opacity-85'"
                 >
-                  Where to go
+                  Where to Go
                 </button></NuxtLink
               >
             </li>
@@ -114,7 +115,7 @@
                   class="text-xs font-bold hover:opacity-100 cursor-pointer"
                   :class="$route.name === 'mediahub' ? 'opacity-100' : 'opacity-85'"
                 >
-                  Media hub
+                  Media Hub
                 </button></NuxtLink
               >
             </li>
@@ -275,7 +276,7 @@
             :to="{ name: 'destinations' }"
             active-class="bg-web-brown/10 opacity-100"
             class="py-3 text-md font-bold p-2 hover:bg-web-brown/10 rounded-sm opacity-85 active:bg-web-brown/10 w-full flex transition duration-300 cursor-pointer"
-            >Where to go</NuxtLink
+            >Where to Go</NuxtLink
           >
         </li>
         <li>
@@ -283,7 +284,7 @@
             :to="{ name: 'mediahub' }"
             active-class="bg-web-brown/10 opacity-100"
             class="py-3 text-md font-bold p-2 hover:bg-web-brown/10 rounded-sm opacity-85 active:bg-web-brown/10 w-full flex transition duration-300 cursor-pointer"
-            >Media hub</NuxtLink
+            >Media Hub</NuxtLink
           >
         </li>
         <li>
