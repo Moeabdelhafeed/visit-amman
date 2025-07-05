@@ -152,6 +152,32 @@
       </div>
     </section>
 
+    <!-- Search Bar Section -->
+    <section class="container max-w-[1280px] lg:px-10 md:px-20 mx-auto px-4 mt-6">
+      <div class="relative">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <svg class="h-5 w-5 text-web-brown/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search destinations by name, category, or location..."
+          class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-web-primary focus:border-transparent text-web-brown placeholder-web-brown/50"
+        />
+        <button
+          v-if="searchQuery"
+          @click="searchQuery = ''"
+          class="absolute inset-y-0 right-0 pr-3 flex items-center"
+        >
+          <svg class="h-5 w-5 text-web-brown/50 hover:text-web-brown transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
     <!-- MAP SECTION -->
     <section v-motion-slide-visible-once-bottom class="container max-w-[1280px]  md:px-20 mt-6 lg:px-10  w-full mx-auto px-4">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.4314771218446!2d35.92488971147532!3d31.94918922572201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b5f9b6d0df885%3A0x5ba66d57515d5d4!2sRainbow%20St.%2C%20Amman!5e0!3m2!1sen!2sjo!4v1751274572384!5m2!1sen!2sjo" class="w-full h-[350px]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -192,6 +218,7 @@
 <script setup>
 
 const selectedCats = ref([])
+const searchQuery = ref('')
 
 const addCat = (id) =>{
   selectedCats.value.push(id)

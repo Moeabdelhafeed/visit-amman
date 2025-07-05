@@ -32,6 +32,7 @@
       alt="Location Image"
       class="absolute group-hover:scale-105 transition-all duration-300 group-active:scale-105 top-0 left-0 w-full h-full object-cover z-0"
     />
+    <div class=" inset-0 absolute bg-black/10"> </div>
 
     <img
       src="/watermarks/location.png"

@@ -194,8 +194,34 @@
       </div>
 </section>
 
+<!-- Search Bar Section -->
+<section class="container max-w-[1280px] lg:px-10 md:px-20 mx-auto px-4 mt-5">
+  <div class="relative">
+    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <svg class="h-5 w-5 text-web-brown/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+    </div>
+    <input
+      v-model="searchQuery"
+      type="text"
+      placeholder="Search events by title, location, or category..."
+      class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-web-primary focus:border-transparent text-web-brown placeholder-web-brown/50"
+    />
+    <button
+      v-if="searchQuery"
+      @click="searchQuery = ''"
+      class="absolute inset-y-0 right-0 pr-3 flex items-center"
+    >
+      <svg class="h-5 w-5 text-web-brown/50 hover:text-web-brown transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+</section>
+
 <!-- 3 Tabs Design -->
-<section class="container md:text-base text-sm max-w-[1280px] lg:px-10 md:px-20 mx-auto px-4">
+<section class="container md:text-base text-sm max-w-[1280px] lg:px-10 mt-1 md:px-20 mx-auto px-4">
   <div class="grid grid-cols-3 gap-0 border-b border-gray-200">
     <button
       :class="['py-5 w-full text-center cursor-pointer  transition-all', activeTab === 'upcoming' ? 'border-b-4 border-web-primary text-web-primary ' : 'border-b-4 border-transparent text-web-brown/70  hover:text-web-primary']"
@@ -255,6 +281,7 @@ import EventCard from '~/components/Home/EventCard.vue'
 
 
 const selectedCats = ref([])
+const searchQuery = ref('')
 
 const addCat = (id) =>{
   selectedCats.value.push(id)
