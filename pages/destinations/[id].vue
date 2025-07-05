@@ -81,7 +81,7 @@
     </div>
     <div class="grid lg:grid-cols-3 grid-cols-2  mt-5  gap-4 h-fit">
       <div v-for="i in 6" :key="i" class="bg-white relative flex-col shadow-web gap-3 text-web-primary  h-[170px]  w-full flex justify-center items-center">
-         <img src="/herowatermark.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
+         <img src="/watermarks/destination.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
         <IconsPeople class="text-5xl" />
         <p class="text-base font-medium text-web-brown">Feature</p>
       </div>

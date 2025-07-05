@@ -38,7 +38,7 @@
 <section v-if="showOverlay" class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/80" @click.self="closeOverlay">
   <div class="relative w-max mx-4">
     <img v-if="overlayType === 'image'" :src="overlayContent" class="w-full max-h-[80vh] object-contain shadow-lg" alt="Preview" />
-    <video v-if="overlayType === 'video'" :src="overlayContent" controls class="w-full max-h-[80vh] object-contain shadow-lg" />
+    <video autoplay v-if="overlayType === 'video'" :src="overlayContent" controls class="w-full max-h-[80vh] object-contain shadow-lg" />
     <button
       @click="closeOverlay"
       class="absolute top-3 end-3 z-10 text-white text-2xl bg-white/30 backdrop-blur-sm rounded-full w-8 h-8 lg:w-9 lg:h-9 text-md flex items-center justify-center hover:bg-white/50 transition"
