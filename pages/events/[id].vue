@@ -400,7 +400,7 @@ const event = ref({
       "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
     price: "50 JOD",
     category: "Music & Culture",
-    countdownDate: "2025-07-07T21:27:00+03:00",
+    countdownDate: "2025-07-31T21:27:00+03:00",
     parking: true,
     playArea: true,
     forAllAges: true,

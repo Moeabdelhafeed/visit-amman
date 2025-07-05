@@ -250,13 +250,13 @@
           >
             <li
               :class="$route.name == 'about' ? 'bg-web-brown/10 opacity-100' : ''"
-              class="text-web-brown opacity-85 hover:opacity-100 active:opacity-100  active:bg-web-brown/10 text-md font-bold hover:bg-web-brown/10 rounded-sm"
+              class="text-web-brown text-md opacity-85 hover:opacity-100 active:opacity-100  active:bg-web-brown/10 text-md font-bold hover:bg-web-brown/10 rounded-sm"
             >
               <NuxtLink :to="{ name: 'about' }">About Amman</NuxtLink>
             </li>
             <li
               :class="$route.name == 'history' ? 'bg-web-brown/10 opacity-100' : ''"
-              class="text-web-brown active:bg-web-brown/10 opacity-85 hover:opacity-100 active:opacity-100 text-md font-bold hover:bg-web-brown/10 rounded-sm"
+              class="text-web-brown text-md active:bg-web-brown/10 opacity-85 hover:opacity-100 active:opacity-100 text-md font-bold hover:bg-web-brown/10 rounded-sm"
             >
               <NuxtLink :to="{ name: 'history' }">History of Amman</NuxtLink>
             </li>

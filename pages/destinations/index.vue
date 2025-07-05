@@ -152,6 +152,7 @@
       </div>
     </section>
 
+
     <!-- Search Bar Section -->
     <section class="container max-w-[1280px] lg:px-10 md:px-20 mx-auto px-4 mt-6">
       <div class="relative">
