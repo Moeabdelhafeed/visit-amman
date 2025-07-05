@@ -37,7 +37,7 @@
 >
 <NuxtLink :to="{name: 'event' , params: {id: content.banner.id}}" >
   <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch min-h-[340px] md:min-h-[380px] rounded-sm overflow-hidden  shadow-web"
+    class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch min-h-[340px]  md:min-h-[380px] rounded-sm overflow-hidden  shadow-web"
   >
     <!-- Left: Banner Info -->
     <div
@@ -140,7 +140,7 @@
     <div class="relative md:h-auto w-full">
       <img
         :src="content?.banner?.image"
-        class="object-cover w-full h-full "
+        class="object-cover w- w-full h-full "
         alt=""
       />
     </div>
