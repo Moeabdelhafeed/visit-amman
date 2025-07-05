@@ -270,34 +270,34 @@ const content = ref({
   hero: {
     images: [
       {
-        url: "/home/hero1.jpg",
+        url: "/home/hero5.jpg",
         id: 0,
+        title: "",
+        subtitle: "",
+      },
+      {
+        url: "/home/hero1.jpg",
+        id: 1,
         title: "Discover Ancient Roman Theater",
         subtitle: "Step into history at the magnificent Roman amphitheater",
       },
       {
         url: "/home/hero2.jpg",
-        id: 1,
+        id: 2,
         title: "Experience Jordanian Culture",
         subtitle: "Immerse yourself in authentic local traditions and heritage",
       },
       {
         url: "/home/hero3.jpg",
-        id: 2,
+        id: 3,
         title: "Warm Jordanian Hospitality",
         subtitle: "Experience the legendary warmth and generosity of our people",
       },
       {
         url: "/home/hero4.jpg",
-        id: 3,
+        id: 4,
         title: "Vibrant Night Entertainment",
         subtitle: "Discover Amman's exciting nightlife and entertainment scene",
-      },
-      {
-        url: "/home/hero5.jpg",
-        id: 4,
-        title: "",
-        subtitle: "",
       },
     ],
   },
