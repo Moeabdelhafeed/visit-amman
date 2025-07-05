@@ -97,7 +97,7 @@
                 <!-- Overlay -->
                 <div class="bg-black/30 absolute w-full inset-0 h-full z-10"></div>
                 <!-- Watermark (does not scale) -->
-                <img class="absolute w-full z-20 -bottom-15 -rotate-5 scale-125" src="/watermarklocation.png" />
+                <img class="absolute w-full z-20 -bottom-15 -rotate-5 scale-125" src="/watermarks/location.png" />
                 <!-- Title -->
                 <div class="text-white flex items-end bottom-3 justify-center h-full font-bold text-2xl relative z-20">
                   {{ location.title }}
@@ -205,49 +205,42 @@ const content = ref({
   title: "Discover Amman's Best Spots",
   subtitle: "From historic landmarks to modern hotspots, find the perfect destination for your next adventure.",
   locations: [
-    {
-      id: 1,
-      url: "/rainbow-street.png",
-      title: "Rainbow Street",
-      subtitle: "A vibrant street known for cafes, shops, and nightlife.",
-    },
-    {
-      id: 2,
-      url: "/abdali-boulevard.png",
-      title: "Abdali Boulevard",
-      subtitle: "Modern shopping, dining, and entertainment destination.",
-    },
-    {
-      id: 3,
-      url: "/jabal-amman.png",
-      title: "Jabal Amman",
-      subtitle: "Historic district with charming architecture and galleries.",
-    },
-    {
-      id: 4,
-      url: "/downtown.png",
-      title: "Downtown",
-      subtitle: "The heart of old Amman, bustling markets and history.",
-    },
-    {
-      id: 5,
-      url: "/khalda.png",
-      title: "Khalda",
-      subtitle: "Modern neighborhood with cafes, shops, and family attractions.",
-    },
-    {
-      id: 6,
-      url: "/abdoun.png",
-      title: "Abdoun",
-      subtitle: "Upscale district known for its vibrant nightlife and restaurants.",
-    },
-    {
-      id: 7,
-      url: "/swefieh.png",
-      title: "Swefieh",
-      subtitle: "Popular area for shopping and nightlife.",
-    },
-  ],
+      {
+        url: "/locations/rainbow-street.jpeg",
+        title: "Rainbow Street",
+        subtitle: "A vibrant street known for cafes, shops, and nightlife.",
+      },
+      {
+        url: "/locations/abdali.jpeg",
+        title: "Abdali Boulevard",
+        subtitle: "Modern shopping, dining, and entertainment destination.",
+      },
+      {
+        url: "/locations/jabal-amman.jpeg",
+        title: "Jabal Amman",
+        subtitle: "Historic district with charming architecture and galleries.",
+      },
+      {
+        url: "/locations/downtown.jpeg",
+        title: "Downtown",
+        subtitle: "The heart of old Amman, bustling markets and history.",
+      },
+      {
+        url: "/locations/khalda.jpeg",
+        title: "Khalda",
+        subtitle: "Modern neighborhood with cafes, shops, and family attractions.",
+      },
+      {
+        url: "/locations/abdoun.png",
+        title: "Abdoun",
+        subtitle: "Upscale district known for its vibrant nightlife and restaurants.",
+      },
+      {
+        url: "/locations/swefieh.jpeg",
+        title: "Swefieh",
+        subtitle: "Popular area for shopping and nightlife.",
+      },
+    ],
   categories: [
     { name: "Entertaiments", id: 1 },
     { name: "Resturants", id: 2 },
@@ -265,12 +258,12 @@ const content = ref({
     { name: "Historical", id: 14 },
   ],
   distenations: [
-    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/astrolabe.png", id: 0 },
-    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/astrolabe.png", id: 1 },
-    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/astrolabe.png", id: 2 },
-    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/astrolabe.png", id: 3 },
-    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/astrolabe.png", id: 4 },
-    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/astrolabe.png", id: 5 },
+    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/destinations/astrolabe.png", id: 0 },
+    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/destinations/astrolabe.png", id: 1 },
+    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/destinations/astrolabe.png", id: 2 },
+    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/destinations/astrolabe.png", id: 3 },
+    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/destinations/astrolabe.png", id: 4 },
+    { name: "Astrolabe", category: "Cafe", location: "Downtown", image: "/destinations/astrolabe.png", id: 5 },
   ],
 });
 

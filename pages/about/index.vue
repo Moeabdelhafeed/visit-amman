@@ -322,11 +322,11 @@ const heroRef = ref(null);
 
 const content = ref({
   hero: {
-    url: "exploreAmman.png",
+    url: "/about/hero.jpg",
   },
   intro: {
     title: "Discover Amman",
-    image: "/exploreIntro.png",
+    image: "/about/intro.png",
     body:
       "Amman, the capital and largest city of Jordan, is a fascinating blend of ancient history and modern vitality. Built on seven hills, this city of over 4 million people has been continuously inhabited for thousands of years, serving as a crossroads for civilizations from the ancient Ammonites to the modern era.\n\nToday, Amman stands as a testament to Jordan's rich heritage and bright future. From the ancient ruins of the Citadel and Roman Theater to the bustling streets of downtown and the modern districts of Abdoun and Sweifieh, the city offers visitors an unparalleled experience where every corner tells a story of conquest, culture, and continuity.",
   },
@@ -334,13 +334,13 @@ const content = ref({
     title: "A City of Seven Hills",
     body:
       "Amman's unique topography, built across seven hills (jabals), has shaped its development and character throughout history. Each hill has its own story: Jabal al-Qal'a (Citadel Hill) houses ancient ruins dating back to the Bronze Age, while Jabal Amman is home to the historic downtown area with its traditional souks and Ottoman-era architecture.\n\nThe city's elevation and strategic location made it a natural fortress and trading hub. From the ancient Ammonites who first settled these hills to the Romans who built their grand theater, from the Umayyads who constructed their desert palaces to the modern Jordanians who have made this city their capital, each era has left its indelible mark on the landscape and culture.",
-    image: "/exploreFirst.png",
+    image: "/about/first.jpg",
   },
   second: {
     title: "Where Past Meets Present",
     body:
       "Modern Amman is a vibrant metropolis where centuries-old traditions blend seamlessly with contemporary innovation. The city's bustling souks offer everything from handcrafted Bedouin jewelry to the latest technology, while its cafes serve both traditional Arabic coffee and artisanal lattes.\n\nYoung entrepreneurs work alongside traditional craftsmen, creating a dynamic cultural landscape that honors the past while embracing the future. From the trendy districts of Abdoun and Sweifieh to the historic neighborhoods of Downtown, Amman offers visitors a unique experience where they can witness the evolution of a city that respects its heritage while confidently moving forward into the modern world.",
-    image: "/exploreSecond.png",
+    image: "/about/second.jpg",
   },
 });
 

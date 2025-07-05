@@ -111,18 +111,18 @@ const swiper = useSwiper(sliderRef, {
 
 const content = ref({
   sponsors: {
-    title: "Proudly Supported By",
+    title: "Our partners",
     sponsors: [
-      { url: "acc.png", id: 0 },
-      { url: "Amaneh.png", id: 1 },
-      { url: "acc.png", id: 2 },
-      { url: "Amaneh.png", id: 3 },
-      { url: "acc.png", id: 4 },
-      { url: "Amaneh.png", id: 5 },
-      { url: "acc.png", id: 6 },
-      { url: "Amaneh.png", id: 7 },
-      { url: "acc.png", id: 8 },
-      { url: "Amaneh.png", id: 9 },
+      { url: "/sponsors/acc.png", id: 0 },
+      { url: "/sponsors/amaneh.png", id: 1 },
+      { url: "/sponsors/acc.png", id: 2 },
+      { url: "/sponsors/amaneh.png", id: 3 },
+      { url: "/sponsors/acc.png", id: 4 },
+      { url: "/sponsors/amaneh.png", id: 5 },
+      { url: "/sponsors/acc.png", id: 6 },
+      { url: "/sponsors/amaneh.png", id: 7 },
+      { url: "/sponsors/acc.png", id: 8 },
+      { url: "/sponsors/amaneh.png", id: 9},
     ],
   },
   mediahub: {
@@ -132,17 +132,17 @@ const content = ref({
     video: {
       title: "Videos of Amman",
       subtitle: "Videos",
-      url: "mediaVideo.png",
+      url: "/mediahub/video.jpeg",
     },
     Image: {
       title: "Images of Amman",
       subtitle: "Images",
-      url: "mediaImage.png",
+      url: "/mediahub/image.jpg",
     },
     Moment: {
       title: "Live Moments in Amman",
       subtitle: "Moments",
-      url: "mediaMoment.png",
+      url: "/mediahub/moment.jpeg",
     },
   },
   ammanFestival: {
@@ -160,7 +160,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event3.jpg",
+        url: "/events/event2.jpg",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -172,7 +172,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event1.png",
+        url: "/events/event1.png",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -184,7 +184,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event2.png",
+        url: "/events/event3.jpeg",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -205,23 +205,23 @@ const content = ref({
     subtitle:
       "Handpicked experiences for every explorer—dine, play, and discover the best of the city.",
     destinations: [
-      { title: "Restaurants", subtitle: "Best places to eat in Amman", url: "/cafe.png" },
+      { title: "Restaurants", subtitle: "Best places to eat in Amman", url: "/destinations/resturants.jpg" },
       {
         title: "Cafes",
         subtitle: "Cozy spots for coffee and tea",
-        url: "/rainbow-street.png",
+        url: "/destinations/cafe.jpeg",
       },
       {
         title: "Entertainments",
         subtitle: "Fun activities and nightlife",
-        url: "/Entertaiments.png",
+        url: "/destinations/entertaiment.jpeg",
       },
-      { title: "Parks", subtitle: "Relax in Amman's green spaces", url: "/abdoun.png" },
-      { title: "Museums", subtitle: "Discover history and culture", url: "/citadel.png" },
+      { title: "Parks", subtitle: "Relax in Amman's green spaces", url: "/destinations/parks.jpeg" },
+      { title: "Museums", subtitle: "Discover history and culture", url: "/destinations/mu.jpg" },
       {
         title: "Shopping",
         subtitle: "Explore malls and local markets",
-        url: "/abdali-boulevard.png",
+        url: "/destinations/shopping.jpg",
       },
     ],
   },
@@ -231,37 +231,37 @@ const content = ref({
       "Journey through Amman's eclectic neighborhoods—where history, culture, and modern life intertwine.",
     locations: [
       {
-        url: "/rainbow-street.png",
+        url: "/locations/rainbow-street.jpeg",
         title: "Rainbow Street",
         subtitle: "A vibrant street known for cafes, shops, and nightlife.",
       },
       {
-        url: "/abdali-boulevard.png",
+        url: "/locations/abdali.jpeg",
         title: "Abdali Boulevard",
         subtitle: "Modern shopping, dining, and entertainment destination.",
       },
       {
-        url: "/jabal-amman.png",
+        url: "/locations/jabal-amman.jpeg",
         title: "Jabal Amman",
         subtitle: "Historic district with charming architecture and galleries.",
       },
       {
-        url: "/downtown.png",
+        url: "/locations/downtown.jpeg",
         title: "Downtown",
         subtitle: "The heart of old Amman, bustling markets and history.",
       },
       {
-        url: "/khalda.png",
+        url: "/locations/khalda.jpeg",
         title: "Khalda",
         subtitle: "Modern neighborhood with cafes, shops, and family attractions.",
       },
       {
-        url: "/abdoun.png",
+        url: "/locations/abdoun.png",
         title: "Abdoun",
         subtitle: "Upscale district known for its vibrant nightlife and restaurants.",
       },
       {
-        url: "/swefieh.png",
+        url: "/locations/swefieh.jpeg",
         title: "Swefieh",
         subtitle: "Popular area for shopping and nightlife.",
       },
@@ -270,28 +270,28 @@ const content = ref({
   hero: {
     images: [
       {
-        url: "/hero3.jpg",
+        url: "/home/hero1.jpg",
         id: 0,
-        title: "Citadel Heights",
-        subtitle: "Where every stone tells a story",
+        title: "Discover Jordan's Ancient Theater",
+        subtitle: "Step into history at the magnificent Roman amphitheater",
       },
       {
-        url: "/hospitality.jpg",
+        url: "/home/hero2.jpg",
         id: 1,
-        title: "A Taste of Jordanian Warmth",
-        subtitle: "Arrive as a guest, leave as family.",
+        title: "Experience Traditional Jordanian Life",
+        subtitle: "Immerse yourself in authentic local culture and hospitality",
       },
       {
-        url: "/hero4.jpg",
+        url: "/home/hero3.jpg",
         id: 2,
-        title: "Amman After Dark",
-        subtitle: "The city glows with joy and possibility.",
+        title: "Marvel at Roman Grandeur",
+        subtitle: "Witness the enduring legacy of ancient civilizations",
       },
       {
-        url: "/hero5.jpg",
+        url: "/home/hero4.jpg",
         id: 3,
-        title: "Living Heritage",
-        subtitle: "Traditions that dance with the present.",
+        title: "Find Peace in Sacred Spaces",
+        subtitle: "Discover spiritual tranquility in Amman's beautiful mosques",
       },
     ],
   },
@@ -646,7 +646,7 @@ const locationsScroll = ref(null);
     <!-- Watermark Background Image -->
     <img
       loading="lazy"
-      src="/bagWatermark.png"
+      src="/watermarks/bag.png"
       class="absolute z-0 w-[600px] opacity-5 md:-bottom-30 -bottom-0 md:-start-30 -start-60 pointer-events-none select-none"
     />
 
@@ -692,16 +692,16 @@ const locationsScroll = ref(null);
             <img
               loading="lazy"
               class="w-full h-auto object-cover"
-              src="/PortalStart.png"
+              src="/char/portalstart.png"
             />
             <img
               v-gsap.magnetic.strong
               v-motion-slide-visible-once-bottom
               loading="lazy"
               class="w-full bottom-20 -end-10 absolute h-auto object-cover festival-character"
-              src="/char.png"
+              src="/char/char.png"
             />
-            <img loading="lazy" class="w-full h-auto object-cover" src="/PortalEnd.png" />
+            <img loading="lazy" class="w-full h-auto object-cover" src="/char/portalend.png" />
           </div>
         </div>
       </div>
@@ -719,8 +719,8 @@ const locationsScroll = ref(null);
             <img
               v-motion-slide-visible-once-bottom
               loading="lazy"
-              class="hover:scale-105 active:scale-105 transition duration-300 w-[500px] xl:w-full object-center mask-[url('/ammanMask.png')] mask-no-repeat mask-[size:contain] mask-top"
-              src="/Amman.png"
+              class="hover:scale-105 active:scale-105 transition duration-300 w-[500px] xl:w-full object-center mask-[url('/masks/amman.png')] mask-no-repeat mask-[size:contain] mask-top"
+              src="/about/amman.jpeg"
               alt="Amman Desktop"
             />
           </div>
@@ -734,7 +734,7 @@ const locationsScroll = ref(null);
                 {{ content?.about?.title }}
               </p>
               <p v-motion-slide-visible-once-bottom class="text-md text-web-brown/70">
-                <img src="/sloganEnglish.png" class="h-8" alt="" />
+                <img src="/brand/sloganenglish.png" class="h-8" alt="" />
               </p>
             </div>
 
@@ -841,7 +841,7 @@ const locationsScroll = ref(null);
           </div>
           
           <!-- Hover effect ring -->
-          <div class="absolute inset-0  ring-2 ring-web-primary/0 group-hover:ring-web-primary group-active:ring-web-primary transition-all duration-300"></div>
+          <div class="absolute inset-0 rounded-sm ring-2 ring-web-primary/0 group-hover:ring-web-primary group-active:ring-web-primary transition-all duration-300"></div>
         </div>
       </div>
     </div>

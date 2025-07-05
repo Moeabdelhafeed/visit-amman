@@ -276,7 +276,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        image: "/event2.png",
+        image: "/events/event3.jpeg",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -305,7 +305,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event3.jpg",
+        url: "/events/event2.jpg",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -317,7 +317,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event1.png",
+        url: "/events/event1.png",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -329,7 +329,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event2.png",
+        url: "/events/event3.jpeg",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -341,7 +341,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event3.jpg",
+        url: "/events/event2.jpg",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -353,7 +353,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event1.png",
+        url: "/events/event1.png",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",
@@ -365,7 +365,7 @@ const content = ref({
         title: "Desert Echoes: Sunset Music & Culture Festival",
         date: "18 Feb - 20 Feb",
         location: "Abdali Boluevard",
-        url: "/event2.png",
+        url: "/events/event3.jpeg",
         description:
           "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",
         price: "50 JOD",

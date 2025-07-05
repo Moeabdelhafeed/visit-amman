@@ -1,5 +1,5 @@
 <template>
-  <div
+  <NuxtLink :to="{name: 'destinations'}"
     class="
       relative
       transition-all duration-300 transform
@@ -34,7 +34,7 @@
     />
 
     <img
-      src="/watermarklocation.png"
+      src="/watermarks/location.png"
       class="absolute -rotate-5 scale-115 -bottom-0 xl:-bottom-15 group-hover:-bottom-0 w-full transition-all duration-300"
       alt=""
     />
@@ -72,7 +72,7 @@
         Explore {{ location?.title }}
       </button>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>

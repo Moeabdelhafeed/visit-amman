@@ -1,5 +1,5 @@
 <template>
-  <div
+  <NuxtLink :to="{name: 'mediahub'}"
     class="text-white flex shadow-web transition-all duration-300 transform overflow-hidden flex-col justify-between group relative rounded-sm h-full w-full inner-shadow p-6 bg-center bg-no-repeat"
     
   >
@@ -22,7 +22,7 @@
 
     <div class="cursor-pointer">
       <img
-        src="/herowatermarkfull.png"
+        src="/watermarks/mediahub.png"
         class="absolute bottom-0 cursor-pointer end-0 h-[190px] transform translate-y-10 xl:group-hover:translate-x-0 transition-all xl:translate-x-10 duration-300 rotate-180"
         alt=""
       />
@@ -32,7 +32,7 @@
         <IconsArrow45 />
       </button>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>

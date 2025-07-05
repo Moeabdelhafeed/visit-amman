@@ -15,7 +15,7 @@
         <Loading v-if="showLoading"  />
     </GSAPTransition>
         
-        <NavBarComponent v-if="!showLoading" :ScrollNum="route.name == 'events' || route.name == 'destination' || route.name == 'event'  || route.name == 'destinations' ?  0 :  route.name == 'about' || route.name == 'history' ? 100 :  150"  />
+        <NavBarComponent v-if="!showLoading" :ScrollNum="route.name == 'events' || route.name == 'destination' || route.name == 'event'  || route.name == 'destinations' ?  0 :  route.name == 'about' || route.name == 'history' || route.name == 'mediahub' ? 100 :  150"  />
     
         <NuxtPage  />
         <FooterComponent />

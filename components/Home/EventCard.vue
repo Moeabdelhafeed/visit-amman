@@ -109,7 +109,7 @@ cursor-pointer
     </div>
 
     <img
-    src="/herowatermark.png"
+    src="/watermarks/event.png"
     alt="Watermark Left"
     class="absolute w-[200px] z-0 bottom-0 opacity-20 end-0 rotate-180 "
   />

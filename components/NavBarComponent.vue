@@ -65,15 +65,15 @@
                 class="dropdown text-web-brown [&_li>*:not(ul):not(.menu-title):not(details):active]:text-web-brown [&_li>*:not(ul):not(.menu-title):not(details):active]:bg-web-brown/10 dropdown-start menu w-52 rounded-box top-9 bg-base-100 shadow-sm absolute left-0 mt-2 z-50 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200"
               >
                 <li
-                  :class="$route.name == 'about' ? 'bg-web-brown/10' : ''"
-                  class="text-web-brown opacity-85 text-xs font-bold active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm"
+                  :class="$route.name == 'about' ? 'bg-web-brown/10 opacity-100' : ''"
+                  class="text-web-brown opacity-85 active:opacity-100 hover:opacity-100 text-xs font-bold active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm"
                 >
                 
                   <NuxtLink :to="{ name: 'about' }">About Amman</NuxtLink>
                 </li>
                 <li
-                  :class="$route.name == 'history' ? 'bg-web-brown/10' : ''"
-                  class="text-web-brown   text-xs font-bold active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm"
+                  :class="$route.name == 'history' ? 'bg-web-brown/10 opacity-100' : ''"
+                  class="text-web-brown opacity-85  text-xs font-bold hover:opacity-100 active:bg-web-brown/10 hover:bg-web-brown/10 rounded-sm"
                 >
                   <NuxtLink :to="{ name: 'history' }">History of Amman</NuxtLink>
                 </li>
@@ -249,14 +249,14 @@
             style="position-anchor: --anchor-4"
           >
             <li
-              :class="$route.name == 'about' ? 'bg-web-brown/10' : ''"
-              class="text-web-brown active:bg-web-brown/10 text-md font-bold hover:bg-web-brown/10 rounded-sm"
+              :class="$route.name == 'about' ? 'bg-web-brown/10 opacity-100' : ''"
+              class="text-web-brown opacity-85 hover:opacity-100 active:opacity-100  active:bg-web-brown/10 text-md font-bold hover:bg-web-brown/10 rounded-sm"
             >
               <NuxtLink :to="{ name: 'about' }">About Amman</NuxtLink>
             </li>
             <li
-              :class="$route.name == 'history' ? 'bg-web-brown/10' : ''"
-              class="text-web-brown active:bg-web-brown/10 text-md font-bold hover:bg-web-brown/10 rounded-sm"
+              :class="$route.name == 'history' ? 'bg-web-brown/10 opacity-100' : ''"
+              class="text-web-brown active:bg-web-brown/10 opacity-85 hover:opacity-100 active:opacity-100 text-md font-bold hover:bg-web-brown/10 rounded-sm"
             >
               <NuxtLink :to="{ name: 'history' }">History of Amman</NuxtLink>
             </li>

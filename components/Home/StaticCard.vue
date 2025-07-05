@@ -3,7 +3,7 @@
     ref="cardRef"
     class="flex bg-white text-web-primary shadow-web rounded-sm p-1  flex-col bg items-center relative justify-center  gap-2 transition-all duration-300 stat-card"
   >
-    <img src="/herowatermark.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
+    <img src="/watermarks/stat.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
     <!-- <img src="/herowatermark.png" class="absolute opacity-20 rotate-180 bottom-0 end-0 w-[100px]" /> -->
 
     <div class="z-10 flex flex-col items-center justify-center h-full">

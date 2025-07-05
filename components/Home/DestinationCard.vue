@@ -1,5 +1,5 @@
 <template>
-  <div
+  <NuxtLink :to="{name: 'destinations'}"
     class="
       text-white 
       flex 
@@ -49,13 +49,13 @@
     </div>
     <div class=" cursor-pointer">
 
-      <img src="/herowatermarkfull.png" class="absolute bottom-0 cursor-pointer end-0 h-[190px] trnasfor translate-y-10 xl:group-hover:translate-x-0  transition-all xl:translate-x-10  duration-300  rotate-180" alt="">
+      <img src="/watermarks/destination.png" class="absolute bottom-0 cursor-pointer end-0 h-[190px] trnasfor translate-y-10 xl:group-hover:translate-x-0  transition-all xl:translate-x-10  duration-300  rotate-180" alt="">
       <button class=" absolute bottom-3 cursor-pointer end-3   xl:translate-y-10 xl:translate-x-10 xl:group-hover:translate-x-0 xl:group-hover:translate-y-0 trnasform transition-all  duration-300 text-2xl   rotate-90 z-20" >
         <IconsArrow45  />
       </button>
     </div>
     
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>

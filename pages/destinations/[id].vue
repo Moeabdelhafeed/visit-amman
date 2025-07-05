@@ -113,9 +113,9 @@
     <div>
       <p class="text-2xl font-semibold  text-web-brown mb-2">Related Destinations</p>
       <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8"> 
-        <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/astrolabe.png' , id: 8}"/>
-        <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/astrolabe.png' , id: 8}"/>
-        <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/astrolabe.png' , id: 8}"/>
+        <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/destinations/astrolabe.png' , id: 8}"/>
+        <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/destinations/astrolabe.png' , id: 8}"/>
+        <DestinationCard :destination="{name: 'Astrolabe' , category: 'Cafe' , location: 'Downtown', image: '/destinations/astrolabe.png' , id: 8}"/>
       </div>
     </div>
     
@@ -151,12 +151,12 @@ function closeOverlay() {
 const destination = ref({
     name:'Astrolabe',
     category: 'Cafe',
-    coverimage:'/astrolabe.png',
+    coverimage:'/destinations/astrolabe.png',
     images:[
-        '/astrolabe.png',
-        '/astrolabe.png',
-        '/astrolabe.png',
-        '/astrolabe.png',
+        '/destinations/astrolabe.png',
+        '/destinations/astrolabe.png',
+        '/destinations/astrolabe.png',
+        '/destinations/astrolabe.png',
     ],
     features:{
         title: 'What will you find',

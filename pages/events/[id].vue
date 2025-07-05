@@ -200,7 +200,7 @@
 <!-- the desc -->
 <section class="container max-w-[1280px] mx-auto lg:mt-7 mt-4 px-4 md:px-20 lg:px-10">
 
-      <p class="text-2xl font-medium text-web-brown mb-2">About the event</p>
+      <p class="text-2xl font-bold text-web-brown mb-2">About the event</p>
   <p v-html="event.long_description.replace(/\n/g, '<br />')" class="text-base text-web-brown/70 mt-3 leading-relaxed">
    
   </p>
@@ -208,10 +208,10 @@
 
 <!-- Event Details Stat Cards -->
 <section class="container max-w-[1280px] mx-auto mt-7 px-4 md:px-20 lg:px-10">
-  <p class="text-2xl font-medium text-web-brown mb-2">Event Details</p>
-  <div class="flex flex-wrap gap-4 mt-4">
+  <p class="text-2xl font-bold text-web-brown mb-2">Event Details</p>
+  <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-4">
     <div v-if="event.parking" class="flex bg-white text-web-primary shadow-web rounded-sm p-6 flex-col items-center relative justify-center gap-2 transition-all duration-300 w-[180px] h-[180px]">
-      <img src="/herowatermark.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
+      <img src="/watermarks/destination.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
       
       <div class="z-10 flex flex-col items-center justify-center h-full">
         <div class="flex flex-col items-center">
@@ -222,7 +222,7 @@
     </div>
     
     <div v-if="event.playArea" class="flex bg-white text-web-primary shadow-web rounded-sm p-6 flex-col items-center relative justify-center gap-2 transition-all duration-300 w-[180px] h-[180px]">
-      <img src="/herowatermark.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
+      <img src="/watermarks/destination.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
       
       <div class="z-10 flex flex-col items-center justify-center h-full">
         <div class="flex flex-col items-center">
@@ -233,7 +233,7 @@
     </div>
     
     <div v-if="event.forAllAges" class="flex bg-white text-web-primary shadow-web rounded-sm p-6 flex-col items-center relative justify-center gap-2 transition-all duration-300 w-[180px] h-[180px]">
-      <img src="/herowatermark.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
+      <img src="/watermarks/destination.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
       
       <div class="z-10 flex flex-col items-center justify-center h-full">
         <div class="flex flex-col items-center">
@@ -248,11 +248,11 @@
 <!-- features -->
 <section class="container max-w-[1280px] mx-auto mt-7 px-4 md:px-20 lg:px-10">
   <div>
-      <p class="text-2xl font-medium text-web-brown mb-2">This event features</p>
+      <p class="text-2xl font-bold text-web-brown mb-2">This event features</p>
     </div>
-    <div class="flex flex-wrap gap-4 mt-4">
+    <div class="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
       <div v-for="speaker in event.speakers" :key="speaker.name" class="flex flex-col items-center bg-white rounded-sm shadow-web p-4 min-w-[220px] max-w-[260px] w-full gap-3 relative">
-        <img src="/herowatermark.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
+        <img src="/watermarks/destination.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
         <img :src="speaker.image" alt="" class="w-20 h-20 rounded-full object-cover border-2 border-web-primary mb-2 z-10" />
         <p class="text-web-brown/70 text-sm text-center z-10">{{ speaker.role }}</p>
         <p class="font-medium text-web-brown text-lg text-center z-10">{{ speaker.name }}</p>
@@ -273,7 +273,7 @@
 
 <!-- Event Days -->
 <section class="container max-w-[1280px] mx-auto mt-7 px-4 md:px-20 lg:px-10">
-  <p class="text-2xl font-medium text-web-brown mb-4">Event Days</p>
+  <p class="text-2xl font-bold text-web-brown mb-4">Event Days</p>
   <div class="space-y-3">
     <div v-for="(day, dayIndex) in event.eventDays" :key="dayIndex" class="collapse collapse-arrow bg-white shadow-web">
       <input type="checkbox" :name="`event-accordion-${dayIndex}`" />
@@ -296,11 +296,11 @@
 <!-- Organisers -->
 <section class="container max-w-[1280px] mx-auto mt-7 px-4 md:px-20 lg:px-10">
   <div>
-    <p class="text-2xl font-medium text-web-brown mb-2">Event Organisers</p>
+    <p class="text-2xl font-bold text-web-brown mb-2">Event Organisers</p>
   </div>
-  <div class="flex flex-wrap gap-4 mt-4">
+  <div class="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
     <div v-for="organiser in event.organisers" :key="organiser.name" class="flex bg-white rounded-sm shadow-web p-4 min-w-[300px] max-w-[400px] w-full gap-4 relative">
-      <img src="/herowatermark.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
+      <img src="/watermarks/destination.png" class="absolute opacity-20 top-0 start-0 w-[100px]" />
       <img :src="organiser.image" alt="" class="w-16 h-16 rounded-full object-cover border-2 border-web-primary z-10" />
       <div class="flex flex-col gap-2 z-10">
         <p class="font-medium text-web-brown text-lg">{{ organiser.name }}</p>
@@ -324,7 +324,7 @@
 <!-- Event Location Map -->
 <section class=" container max-w-[1280px] mx-auto px-4 md:px-20 lg:px-10  mt-7 mb-8">
   <div class=" mb-4">
-    <p class="text-2xl font-medium text-web-brown mb-2">Event Location</p>
+    <p class="text-2xl font-bold text-web-brown mb-2">Event Location</p>
   </div>
   <iframe 
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.4314771218446!2d35.92488971147532!3d31.94918922572201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b5f9b6d0df885%3A0x5ba66d57515d5d4!2sRainbow%20St.%2C%20Amman!5e0!3m2!1sen!2sjo!4v1751274572384!5m2!1sen!2sjo" 
@@ -351,7 +351,7 @@ const event = ref({
       {
         name: "Layla Al-Fayez",
         role: "Lead Vocalist",
-        image: "/someone.png",
+        image: "/events/someone.png",
         phone: "+962790000000",
         website: "https://layla-artist.com",
         instagram: "https://instagram.com/laylaalfayez"
@@ -359,7 +359,7 @@ const event = ref({
       {
         name: "Omar Haddad",
         role: "Oud Player",
-        image: "/someone.png",
+        image: "/events/someone.png",
         phone: "+962791111111",
         website: "https://omarhaddadmusic.com",
         instagram: "https://instagram.com/omarhaddad"
@@ -367,7 +367,7 @@ const event = ref({
       {
         name: "Sara Nasser",
         role: "Poet & Storyteller",
-        image: "/someone.png",
+        image: "/events/someone.png",
         phone: "+962792222222",
         website: "https://saranasserpoetry.com",
         instagram: "https://instagram.com/saranasser"
@@ -377,7 +377,7 @@ const event = ref({
       {
         name: "Amman Cultural Foundation",
         description: "A leading organization dedicated to promoting Jordanian arts and culture through innovative events and community engagement.",
-        image: "/someone.png",
+        image: "/events/someone.png",
         phone: "+962793333333",
         website: "https://ammancultural.org",
         instagram: "https://instagram.com/ammancultural"
@@ -385,7 +385,7 @@ const event = ref({
       {
         name: "Desert Echoes Productions",
         description: "Specialized in creating immersive cultural experiences that bridge traditional and contemporary artistic expressions.",
-        image: "/someone.png",
+        image: "/events/someone.png",
         phone: "+962794444444",
         website: "https://desertechoes.com",
         instagram: "https://instagram.com/desertechoes"
@@ -394,7 +394,7 @@ const event = ref({
     title: "Desert Echoes: Sunset Music & Culture Festival",
     date: "18 Feb - 20 Feb",
     location: "Abdali Boluevard",
-    image: "/event2.png",
+    image: "/events/event3.jpeg",
     long_description: 'Experience the magic of the desert as it comes alive with the rhythm of music and the vibrant energy of cultural celebration.\n\nThe Desert Echoes Festival transforms Abdali Boulevard into a mesmerizing oasis of sound, art, and community spirit. Over three unforgettable days, immerse yourself in a carefully curated lineup of local and international artists who will serenade you under the starlit desert sky.\n\nFrom traditional Jordanian melodies to contemporary beats, every performance tells a story of cultural fusion and artistic expression. ',
     description:
       "Join us for a magical weekend in the heart of Abdali Boluevard, where music meets the desert.",

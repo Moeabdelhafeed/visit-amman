@@ -155,7 +155,7 @@ useHead({
 
 const content = ref({
   hero: {
-    url: "history.png",
+    url: "about/history/hero.png",
   },
   intro: {
     title: "A Journey Through Time",
@@ -170,19 +170,19 @@ const historicalPeriods = ref([
     title: "Ammonite Kingdom – Rabbath Ammon (circa 1200 BCE – 500 BCE)",
     description:
       "The earliest known roots of Amman trace back to the Ammonite civilization, which made the city their capital and named it Rabbath Ammon — meaning 'the royal citadel of the Ammonites.' Perched on the city's hills, the Ammonites built defensive fortifications and a thriving society. This ancient Semitic kingdom played a significant role in regional politics and trade across the Levant. The city is frequently mentioned in Biblical texts and was known for its advanced water systems and pottery. Remnants of the Ammonite walls still exist today, buried beneath layers of later civilizations.",
-    image: "/history1.jpg",
+    image: "/about/history/first.jpg",
   },
   {
     title: "Greco-Roman Period – Philadelphia (circa 332 BCE – 400 CE)",
     description:
       "During the Hellenistic period, Amman was renamed Philadelphia in honor of Ptolemy II Philadelphus, one of Alexander the Great's successors. It became a part of the famed Decapolis, a group of ten prominent Greco-Roman cities in the eastern Roman Empire. This era saw major urban development, with Philadelphia gaining paved streets, temples, baths, and the magnificent Roman Theater which still hosts events today. The Odeon, Nymphaeum, and extensive Roman road networks demonstrate the city's prosperity and architectural excellence during this time. Greek and Roman cultural influences flourished, blending with local traditions.",
-    image: "/history2.jpg",
+    image: "/about/history/second.jpg",
   },
   {
     title: "Early Islamic & Umayyad Era (circa 635 CE – 750 CE)",
     description:
       "With the arrival of Islam in the 7th century, Philadelphia returned to its Semitic roots and resumed the name Amman. Under the Umayyad Caliphate, the city saw renewed urban and administrative importance. One of the most notable structures from this period is the Umayyad Palace complex on the Citadel Hill, which includes a mosque, audience hall, and residential areas. Built using a fusion of Byzantine and Islamic styles, it reflects early Islamic architectural transitions. This era marked Amman as a regional administrative center and a waypoint along key trade and pilgrimage routes connecting Damascus, Jerusalem, and the Hijaz.",
-    image: "/history3.jpg",
+    image: "/about/history/third.jpeg",
   },
 ]);
 

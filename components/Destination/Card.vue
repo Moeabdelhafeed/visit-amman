@@ -16,7 +16,7 @@
 
       
     </div>
-      <img class="absolute bottom-0 indent-0 opacity-20 -start-6 w-[200px] -rotate-90" src="/herowatermarkfull.png" alt="">
+      <img class="absolute bottom-0 indent-0 opacity-20 -start-6 w-[200px] -rotate-90" src="/watermarks/destination.png" alt="">
 
     <!-- Card Content -->
     <div class="flex-1 relative flex flex-col justify-between p-6  ">
